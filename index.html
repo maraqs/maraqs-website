@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maraqs Commerce | Tax, Accounting & Business Compliance Partner</title>
+  <meta name="description" content="Maraqs Commerce provides expert GST registration, ITR filing, accounting, bookkeeping, LLP and Private Limited company registrations in Ghaziabad and PAN India." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+              navy: '#0f172a',
+              dark: '#090d16'
+            },
+            accent: {
+              emerald: '#059669',
+              amber: '#d97706'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-800 antialiased font-sans">
+
+  <!-- Top Notification Bar -->
+  <div class="bg-brand-navy text-slate-300 text-xs py-2.5 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-2 text-center sm:text-left">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">Advisory</span>
+        <span>Trusted Tax & Corporate Compliance Partner in Ghaziabad & PAN India</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="tel:+918595255099" class="hover:text-white transition flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          +91 8595255099
+        </a>
+        <a href="mailto:official.maraqs@gmail.com" class="hover:text-white transition hidden md:flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          official.maraqs@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-slate-200 transition-all shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-900 via-brand-700 to-brand-500 flex items-center justify-center text-white font-black text-xl shadow-md shadow-blue-500/20 tracking-wider">
+            MC
+          </div>
+          <div>
+            <span class="text-xl font-black tracking-tight text-brand-navy block uppercase leading-none">Maraqs</span>
+            <span class="text-xs tracking-widest text-brand-600 font-bold uppercase">Commerce</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden lg:flex items-center space-x-7 text-[15px] font-medium text-slate-700">
+          <a href="#home" class="hover:text-brand-600 transition">Home</a>
+          <a href="#about" class="hover:text-brand-600 transition">About Us</a>
+          <a href="#services" class="hover:text-brand-600 transition">Services</a>
+          <a href="#why-us" class="hover:text-brand-600 transition">Why Choose Us</a>
+          <a href="#process" class="hover:text-brand-600 transition">Process</a>
+          <a href="#faqs" class="hover:text-brand-600 transition">FAQs</a>
+          <a href="#contact" class="hover:text-brand-600 transition">Contact</a>
+        </nav>
+
+        <!-- Right Header Action -->
+        <div class="hidden sm:flex items-center space-x-3">
+          <a href="https://wa.me/918595255099?text=Hello%20Maraqs%20Commerce,%20I%20need%20assistance%20with%20tax/compliance" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 px-3.5 py-2.5 rounded-lg transition">
+            <svg class="w-4 h-4 fill-emerald-600" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.539 1.796.819 2.791.82 3.18 0 5.767-2.587 5.768-5.766.001-3.18-2.586-5.766-5.768-5.766zm9.969 5.768c0 5.523-4.478 10-10 10-1.74 0-3.37-.449-4.801-1.233l-5.199 1.363 1.391-5.083c-.88-1.488-1.391-3.23-1.391-5.047 0-5.523 4.477-10 10-10 5.522 0 10 4.477 10 10z"/></svg>
+            WhatsApp
+          </a>
+          <a href="#contact" class="inline-flex items-center text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-blue-500/25 px-4 py-2.5 rounded-lg transition">
+            Get Consultation
+          </a>
+        </div>
+
+        <!-- Mobile Menu Hamburger -->
+        <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 focus:outline-none" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3">
+      <a href="#home" class="block py-2 text-slate-700 font-medium">Home</a>
+      <a href="#about" class="block py-2 text-slate-700 font-medium">About Us</a>
+      <a href="#services" class="block py-2 text-slate-700 font-medium">Services</a>
+      <a href="#why-us" class="block py-2 text-slate-700 font-medium">Why Choose Us</a>
+      <a href="#process" class="block py-2 text-slate-700 font-medium">Process</a>
+      <a href="#faqs" class="block py-2 text-slate-700 font-medium">FAQs</a>
+      <a href="#contact" class="block py-2 text-slate-700 font-medium">Contact Us</a>
+      <div class="pt-4 border-t border-slate-100 flex flex-col gap-2">
+        <a href="https://wa.me/918595255099" target="_blank" class="w-full text-center py-2.5 rounded-lg bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200 text-sm">Chat on WhatsApp</a>
+        <a href="#contact" class="w-full text-center py-2.5 rounded-lg bg-brand-600 text-white font-semibold text-sm">Request Free Call</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-blue-50/50 via-white to-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100/70 border border-blue-200 text-brand-700 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
+            Seamless Business Filings & Tax Solutions
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-5xl font-extrabold text-brand-navy tracking-tight leading-[1.2]">
+            Your Trusted Partner for <span class="text-brand-600 underline decoration-blue-200 underline-offset-8">Tax, Accounting</span> & Business Compliance
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Professional GST, Income Tax, Accounting, Registration, and Regulatory Compliance solutions for individuals, startups, LLPs, and private limited companies.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+            <a href="#contact" class="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-bold text-white bg-brand-600 hover:bg-brand-700 shadow-lg shadow-blue-500/25 transition">
+              Get Free Consultation
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a href="https://wa.me/918595255099?text=Hi%20Maraqs%20Commerce,%20I%20want%20to%20know%20about%20your%20services" target="_blank" class="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-bold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm transition">
+              <svg class="w-5 h-5 mr-2 text-emerald-600 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.539 1.796.819 2.791.82 3.18 0 5.767-2.587 5.768-5.766.001-3.18-2.586-5.766-5.768-5.766zm9.969 5.768c0 5.523-4.478 10-10 10-1.74 0-3.37-.449-4.801-1.233l-5.199 1.363 1.391-5.083c-.88-1.488-1.391-3.23-1.391-5.047 0-5.523 4.477-10 10-10 5.522 0 10 4.477 10 10z"/></svg>
+              Talk to Us on WhatsApp
+            </a>
+          </div>
+
+          <!-- Trust highlights -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200 max-w-lg mx-auto lg:mx-0">
+            <div>
+              <p class="text-2xl font-bold text-brand-navy">100%</p>
+              <p class="text-xs text-slate-500 font-medium">Compliance Accuracy</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-brand-navy">500+</p>
+              <p class="text-xs text-slate-500 font-medium">Filings Managed</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-brand-navy">Direct</p>
+              <p class="text-xs text-slate-500 font-medium">Dedicated Advisor</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Card Mockup -->
+        <div class="lg:col-span-5">
+          <div class="relative mx-auto max-w-md bg-white rounded-3xl shadow-xl shadow-slate-200/80 border border-slate-200/80 p-6">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">✓</div>
+                <div>
+                  <h4 class="text-sm font-bold text-slate-800">Compliance Status: Active</h4>
+                  <p class="text-xs text-slate-500">Maraqs Client Dashboard</p>
+                </div>
+              </div>
+              <span class="text-xs px-2.5 py-1 bg-blue-50 text-brand-700 font-semibold rounded-md border border-blue-100">FY 2026-27</span>
+            </div>
+
+            <div class="space-y-3.5">
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-blue-100 text-brand-600 flex items-center justify-center text-xs font-bold">GST</div>
+                  <div>
+                    <p class="text-xs font-semibold text-slate-800">GSTR-1 & 3B Monthly</p>
+                    <p class="text-[11px] text-emerald-600">Filed on Time</p>
+                  </div>
+                </div>
+                <span class="text-xs font-bold text-slate-700">Verified</span>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold">ITR</div>
+                  <div>
+                    <p class="text-xs font-semibold text-slate-800">Income Tax e-Filing</p>
+                    <p class="text-[11px] text-brand-600">Computation Complete</p>
+                  </div>
+                </div>
+                <span class="text-xs font-bold text-slate-700">Processed</span>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center text-xs font-bold">ROC</div>
+                  <div>
+                    <p class="text-xs font-semibold text-slate-800">MCA Annual Filing</p>
+                    <p class="text-[11px] text-slate-500">Next Due Monitored</p>
+                  </div>
+                </div>
+                <span class="text-xs font-bold text-slate-700">Protected</span>
+              </div>
+            </div>
+
+            <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <span>Shalimar Garden, Ghaziabad</span>
+              <span class="text-brand-600 font-semibold flex items-center gap-1">
+                ● 100% On-Time Record
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold tracking-wider uppercase text-brand-600">Our Capabilities</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-2">
+          Complete Business & Tax Solutions Under One Roof
+        </h2>
+        <p class="text-slate-600 text-base mt-3">
+          We handle technical tax workflows and government registrations, so you can focus entirely on running and growing your business.
+        </p>
+      </div>
+
+      <!-- Service Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- 1. GST Services -->
+        <div class="bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-blue-200 hover:shadow-xl rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-brand-600 flex items-center justify-center mb-5 font-bold">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0zm5 5a.5.5 0 11-1 0 .5.5 0 011 0z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 mb-2">GST Registration & Filings</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Fresh GST registration, monthly GSTR-1 & 3B return filing, reconciliation of ITC under GSTR-2B, and composition schemes.
+            </p>
+          </div>
+          <a href="#contact" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-800 mt-2">
+            Inquire Now <span class="ml-1">→</span>
+          </a>
+        </div>
+
+        <!-- 2. Income Tax -->
+        <div class="bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-blue-200 hover:shadow-xl rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-5 font-bold">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 mb-2">Income Tax Return (ITR)</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Accurate ITR filing for salaried individuals, traders, freelancers, professionals, LLPs, and corporate entities.
+            </p>
+          </div>
+          <a href="#contact" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-800 mt-2">
+            Inquire Now <span class="ml-1">→</span>
+          </a>
+        </div>
+
+        <!-- 3. Accounting & Bookkeeping -->
+        <div class="bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-blue-200 hover:shadow-xl rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-5 font-bold">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 mb-2">Accounting & Bookkeeping</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              End-to-end ledger maintenance, Profit & Loss reporting, Balance Sheet preparation, and bank reconciliations on Tally & Zoho.
+            </p>
+          </div>
+          <a href="#contact" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-800 mt-2">
+            Inquire Now <span class="ml-1">→</span>
+          </a>
+        </div>
+
+        <!-- 4. Business Registration -->
+        <div class="bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-blue-200 hover:shadow-xl rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-5 font-bold">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 mb-2">Company & LLP Setup</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Private Limited Company registration, LLP formation, Partnership deed drafting, and Sole Proprietorship setup with MCA.
+            </p>
+          </div>
+          <a href="#contact" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-800 mt-2">
+            Inquire Now <span class="ml-1">→</span>
+          </a>
+        </div>
+
+        <!-- 5. TDS & TCS Compliance -->
+        <div class="bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-blue-200 hover:shadow-xl rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-5 font-bold">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 mb-2">TDS Return & Compliance</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Quarterly TDS return e-filing (24Q, 26Q, 27Q), TRACES justification reports, Form 16/16A generation, and interest computation.
+            </p>
+          </div>
+          <a href="#contact" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-800 mt-2">
+            Inquire Now <span class="ml-1">→</span>
+          </a>
+        </div>
+
+        <!-- 6. GST Notice Reply -->
+        <div class="bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-blue-200 hover:shadow-xl rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center mb-5 font-bold">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 mb-2">GST Notice Assistance</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Professional review and drafting of formal replies for ASMT-10, DRC-01, DRC-01A, and ITC mismatch inquiries.
+            </p>
+          </div>
+          <a href="#contact" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-800 mt-2">
+            Inquire Now <span class="ml-1">→</span>
+          </a>
+        </div>
+
+        <!-- 7. GST Amendments & Cancellation -->
+        <div class="bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-blue-200 hover:shadow-xl rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center mb-5 font-bold">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 mb-2">GST Amendment & Surrender</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Core & non-core amendment of address, partners, bank accounts, or clean surrender/cancellation of inactive GSTINs.
+            </p>
+          </div>
+          <a href="#contact" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-800 mt-2">
+            Inquire Now <span class="ml-1">→</span>
+          </a>
+        </div>
+
+        <!-- 8. Digital Signatures (DSC) -->
+        <div class="bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-blue-200 hover:shadow-xl rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center mb-5 font-bold">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 mb-2">Class 3 Digital Signature (DSC)</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Instant generation of Class 3 DSC tokens for MCA/ROC filings, Income Tax portal, GST verification, and e-Tendering.
+            </p>
+          </div>
+          <a href="#contact" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-800 mt-2">
+            Inquire Now <span class="ml-1">→</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-20 bg-slate-50 border-y border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-xs font-bold tracking-wider uppercase text-brand-600">About Maraqs Commerce</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-2 mb-6 leading-tight">
+            Reliable Taxation & Regulatory Guidance for India’s Growing Businesses
+          </h2>
+          <div class="space-y-4 text-slate-600 text-base leading-relaxed">
+            <p>
+              <strong>Maraqs Commerce</strong> was founded with a singular objective: to simplify complex Indian taxation, corporate law, and accounting processes for small businesses, entrepreneurs, and established enterprises.
+            </p>
+            <p>
+              Navigating evolving regulatory environments—such as frequent GST amendments, revised Income Tax forms, and statutory MCA deadlines—demands precision and vigilance. We provide responsive, professional, and accessible compliance services so you never face unnecessary penalties or departmental scrutiny.
+            </p>
+            <p>
+              Based out of <strong>Ghaziabad, Uttar Pradesh</strong>, we provide both localized personal consultations across Delhi-NCR and streamlined digital compliance services across India.
+            </p>
+          </div>
+
+          <div class="mt-8 grid grid-cols-2 gap-4">
+            <div class="p-4 bg-white rounded-xl border border-slate-200">
+              <p class="text-brand-600 font-bold text-xl">100% Digital</p>
+              <p class="text-xs text-slate-500 mt-1">Paperless document submission & tracking</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl border border-slate-200">
+              <p class="text-brand-600 font-bold text-xl">Fair Pricing</p>
+              <p class="text-xs text-slate-500 mt-1">Transparent professional fees with zero hidden charges</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm relative">
+          <h3 class="text-xl font-bold text-slate-800 mb-6">Our Core Practice Areas</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-blue-50 text-brand-600 flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+              <div>
+                <p class="text-sm font-semibold text-slate-800">GST Advisory & Reconciliation</p>
+                <p class="text-xs text-slate-500">Protecting your business against input tax credit (ITC) mismatches.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-blue-50 text-brand-600 flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+              <div>
+                <p class="text-sm font-semibold text-slate-800">Corporate Incorporation & Compliance</p>
+                <p class="text-xs text-slate-500">Fast-tracked SPICe+ MCA registrations for startups and LLP formation.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-blue-50 text-brand-600 flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+              <div>
+                <p class="text-sm font-semibold text-slate-800">Direct Tax Structuring & Filings</p>
+                <p class="text-xs text-slate-500">Proactive tax planning to optimize legitimate rebates and deductions.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-blue-50 text-brand-600 flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+              <div>
+                <p class="text-sm font-semibold text-slate-800">Audit-Ready Bookkeeping</p>
+                <p class="text-xs text-slate-500">Structured monthly financial accounts ready for banking and loan approvals.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why-us" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-wider uppercase text-brand-600">The Maraqs Advantage</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-2">Why Choose Maraqs Commerce?</h2>
+        <p class="text-slate-600 text-base mt-3">We eliminate legal bureaucracy and confusion with predictable, high-quality execution.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-brand-600 flex items-center justify-center font-bold mb-4">1</div>
+          <h4 class="text-lg font-bold text-slate-800 mb-2">Professional & Reliable Service</h4>
+          <p class="text-sm text-slate-600">Every tax computation and return is thoroughly cross-checked to ensure zero clerical discrepancies.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-brand-600 flex items-center justify-center font-bold mb-4">2</div>
+          <h4 class="text-lg font-bold text-slate-800 mb-2">Transparent Process</h4>
+          <p class="text-sm text-slate-600">No unexpected fees. We provide clear deliverables and upfront government challan receipts.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-brand-600 flex items-center justify-center font-bold mb-4">3</div>
+          <h4 class="text-lg font-bold text-slate-800 mb-2">Timely Compliance</h4>
+          <p class="text-sm text-slate-600">Automated reminder systems guarantee your GSTR-3B, TDS, and ITR deadlines are met well ahead of the cut-off.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-brand-600 flex items-center justify-center font-bold mb-4">4</div>
+          <h4 class="text-lg font-bold text-slate-800 mb-2">Business-Focused Solutions</h4>
+          <p class="text-sm text-slate-600">We don't just fill forms—we advise you on legal structures that support future growth and funding.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-brand-600 flex items-center justify-center font-bold mb-4">5</div>
+          <h4 class="text-lg font-bold text-slate-800 mb-2">Easy Documentation Process</h4>
+          <p class="text-sm text-slate-600">Submit documents via WhatsApp or email without having to visit an office in person.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-brand-600 flex items-center justify-center font-bold mb-4">6</div>
+          <h4 class="text-lg font-bold text-slate-800 mb-2">Dedicated Client Support</h4>
+          <p class="text-sm text-slate-600">Direct telephone and WhatsApp access to dedicated tax professionals for instant query resolution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works (Process Section) -->
+  <section id="process" class="py-20 bg-slate-50 border-t border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-wider uppercase text-brand-600">Streamlined Workflow</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-2">How It Works</h2>
+        <p class="text-slate-600 text-base mt-3">Simple, transparent, 4-step compliance lifecycle.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+        <!-- Step 1 -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 relative shadow-sm">
+          <span class="text-5xl font-extrabold text-slate-100 absolute top-4 right-4">01</span>
+          <div class="w-10 h-10 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center mb-4 text-sm">1</div>
+          <h4 class="text-lg font-bold text-slate-800 mb-2">Contact Us</h4>
+          <p class="text-sm text-slate-600">Reach out via our website form, phone call, or direct WhatsApp message to share your requirement.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 relative shadow-sm">
+          <span class="text-5xl font-extrabold text-slate-100 absolute top-4 right-4">02</span>
+          <div class="w-10 h-10 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center mb-4 text-sm">2</div>
+          <h4 class="text-lg font-bold text-slate-800 mb-2">Share Requirements</h4>
+          <p class="text-sm text-slate-600">Provide basic KYC documents, invoices, or business details over email or WhatsApp securely.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 relative shadow-sm">
+          <span class="text-5xl font-extrabold text-slate-100 absolute top-4 right-4">03</span>
+          <div class="w-10 h-10 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center mb-4 text-sm">3</div>
+          <h4 class="text-lg font-bold text-slate-800 mb-2">We Handle The Work</h4>
+          <p class="text-sm text-slate-600">Our consultants review, compute tax liabilities, draft petitions, and complete portal submissions.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 relative shadow-sm">
+          <span class="text-5xl font-extrabold text-slate-100 absolute top-4 right-4">04</span>
+          <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center mb-4 text-sm">4</div>
+          <h4 class="text-lg font-bold text-slate-800 mb-2">Receive Completion</h4>
+          <p class="text-sm text-slate-600">Get your final certificate, ITR-V acknowledgment, or GST filing challan directly in your inbox.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-16 bg-brand-navy text-white relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">
+        Need Help With Your Tax or Business Compliance?
+      </h2>
+      <p class="text-slate-300 text-lg max-w-2xl mx-auto mb-8">
+        Talk to Maraqs Commerce today and get prompt, professional assistance tailored to your business goals.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact" class="px-8 py-3.5 rounded-xl font-bold bg-brand-600 hover:bg-brand-500 text-white transition shadow-lg shadow-blue-600/30">
+          Get Free Consultation
+        </a>
+        <a href="tel:+918595255099" class="px-8 py-3.5 rounded-xl font-bold bg-white/10 hover:bg-white/20 text-white border border-white/20 transition">
+          Call: +91 8595255099
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section id="faqs" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="text-xs font-bold tracking-wider uppercase text-brand-600">Common Inquiries</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-2">Frequently Asked Questions</h2>
+        <p class="text-slate-600 text-base mt-3">Answers to basic questions regarding GST, ITR, and Business Registrations.</p>
+      </div>
+
+      <div class="space-y-4" id="faqAccordion">
+        
+        <details class="group bg-slate-50 rounded-xl border border-slate-200 p-5 open:bg-white transition">
+          <summary class="font-bold text-slate-800 cursor-pointer flex justify-between items-center list-none">
+            <span>When is GST registration mandatory in India?</span>
+            <span class="text-brand-600 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+            GST registration is compulsory for businesses selling goods whose turnover exceeds ₹40 Lakhs (₹20 Lakhs for Special Category States). For service providers, the threshold is ₹20 Lakhs (₹10 Lakhs in Special Category States). E-commerce sellers and businesses engaged in inter-state sales require mandatory GST registration regardless of turnover.
+          </p>
+        </details>
+
+        <details class="group bg-slate-50 rounded-xl border border-slate-200 p-5 open:bg-white transition">
+          <summary class="font-bold text-slate-800 cursor-pointer flex justify-between items-center list-none">
+            <span>What documents are required for Private Limited Company registration?</span>
+            <span class="text-brand-600 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+            For all proposed directors: PAN card, Aadhaar card/Passport/Voter ID, and updated bank statement/electricity bill (under 2 months old). For the registered office: Electricity bill or property tax receipt along with a No Objection Certificate (NOC) from the property owner.
+          </p>
+        </details>
+
+        <details class="group bg-slate-50 rounded-xl border border-slate-200 p-5 open:bg-white transition">
+          <summary class="font-bold text-slate-800 cursor-pointer flex justify-between items-center list-none">
+            <span>What is the difference between GSTR-1 and GSTR-3B?</span>
+            <span class="text-brand-600 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+            GSTR-1 is a monthly or quarterly return where you declare details of all outward supplies (sales). GSTR-3B is a monthly self-declaration summary return used to report summary values of sales, claim eligible Input Tax Credit (ITC), and remit the net tax payable to the government.
+          </p>
+        </details>
+
+        <details class="group bg-slate-50 rounded-xl border border-slate-200 p-5 open:bg-white transition">
+          <summary class="font-bold text-slate-800 cursor-pointer flex justify-between items-center list-none">
+            <span>What should I do if I receive a GST notice?</span>
+            <span class="text-brand-600 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+            Do not ignore the notice. Check the DIN (Document Identification Number) to verify its authenticity, evaluate the exact reason (such as GSTR-3B vs GSTR-2B mismatch, ASMT-10, or late filing), and draft a factual, documented response within the stipulated 15 to 30 day window. Maraqs Commerce handles notice analysis and legal drafted replies.
+          </p>
+        </details>
+
+        <details class="group bg-slate-50 rounded-xl border border-slate-200 p-5 open:bg-white transition">
+          <summary class="font-bold text-slate-800 cursor-pointer flex justify-between items-center list-none">
+            <span>Can I file my Income Tax Return without Form 16?</span>
+            <span class="text-brand-600 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+            Yes. You can file using your monthly salary slips, your bank account statements, your AIS (Annual Information Statement), and Form 26AS to cross-verify all TDS deducted by your employer.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Contact Info -->
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <span class="text-xs font-bold tracking-wider uppercase text-brand-600">Get In Touch</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1">Connect With Maraqs Commerce</h2>
+            <p class="text-slate-600 text-sm mt-3">
+              Schedule a consultation, ask a technical query, or request an immediate compliance review.
+            </p>
+          </div>
+
+          <div class="space-y-4 pt-2">
+            <!-- Address Card -->
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 text-brand-600 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-800">Office Location</h4>
+                <p class="text-sm text-slate-600 mt-1 leading-snug">
+                  876/5, Shalimar Garden Extn-1,<br />
+                  Ghaziabad, Uttar Pradesh - 201005
+                </p>
+                <a href="https://maps.google.com/?q=876/5,+Shalimar+Garden+Extn-1,+Ghaziabad,+U.P+201005" target="_blank" class="inline-block mt-2 text-xs font-bold text-brand-600 hover:underline">
+                  Open on Google Maps ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- Phone Card -->
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-800">Phone & WhatsApp</h4>
+                <div class="mt-1 space-y-1">
+                  <p class="text-sm text-slate-600">
+                    Direct Call: <a href="tel:+919355476488" class="font-semibold text-slate-800 hover:text-brand-600">+91 9355476488</a>
+                  </p>
+                  <p class="text-sm text-slate-600">
+                    WhatsApp: <a href="https://wa.me/918595255099" target="_blank" class="font-semibold text-emerald-600 hover:underline">+91 8595255099</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email Card -->
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-800">Email Address</h4>
+                <p class="text-sm text-slate-600 mt-1">
+                  <a href="mailto:official.maraqs@gmail.com" class="font-semibold text-slate-800 hover:text-brand-600">official.maraqs@gmail.com</a>
+                </p>
+                <p class="text-xs text-slate-400 mt-0.5">Responses guaranteed within 24 business hours</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-7">
+          <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
+            <h3 class="text-2xl font-bold text-brand-navy mb-2">Send an Inquiry</h3>
+            <p class="text-sm text-slate-500 mb-6">Fill in your details below and our team will get in touch with you shortly.</p>
+
+            <form id="leadForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-600 mb-1.5">Full Name *</label>
+                  <input type="text" id="formName" required placeholder="e.g. Rahul Sharma" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-600 text-sm bg-slate-50/50" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-600 mb-1.5">Phone Number *</label>
+                  <input type="tel" id="formPhone" required pattern="[0-9]{10}" placeholder="10-digit mobile number" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-600 text-sm bg-slate-50/50" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-600 mb-1.5">Email Address *</label>
+                  <input type="email" id="formEmail" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-600 text-sm bg-slate-50/50" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-600 mb-1.5">Service Required *</label>
+                  <select id="formService" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-600 text-sm bg-slate-50/50">
+                    <option value="">Select Service...</option>
+                    <option value="GST Registration & Filing">GST Registration & Filing</option>
+                    <option value="Income Tax Return (ITR)">Income Tax Return (ITR)</option>
+                    <option value="Accounting & Bookkeeping">Accounting & Bookkeeping</option>
+                    <option value="Private Limited / LLP Registration">Private Limited / LLP Registration</option>
+                    <option value="Proprietorship / Partnership Setup">Proprietorship / Partnership Setup</option>
+                    <option value="GST Notice Reply Assistance">GST Notice Reply Assistance</option>
+                    <option value="TDS Compliance">TDS Compliance</option>
+                    <option value="Digital Signature (DSC)">Digital Signature (DSC)</option>
+                    <option value="Other Business Advisory">Other Business Advisory</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-600 mb-1.5">Your Message / Requirements</label>
+                <textarea id="formMessage" rows="4" placeholder="Share brief details about your company, current turnover, or specific compliance questions..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-600 text-sm bg-slate-50/50"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 px-6 rounded-xl font-bold text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-blue-500/25 transition">
+                Submit Consultation Request
+              </button>
+
+              <p id="successNotice" class="hidden text-center text-sm font-semibold text-emerald-600 bg-emerald-50 py-2.5 rounded-lg border border-emerald-200">
+                Thank you! Your request has been recorded. We will connect with you shortly.
+              </p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-slate-400 text-sm pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800/80">
+        
+        <!-- Brand Summary -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-brand-600 text-white font-black text-lg flex items-center justify-center">MC</div>
+            <span class="text-white font-extrabold text-lg tracking-tight">MARAQS COMMERCE</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Tax | Accounting | Business Registration | Compliance. Dedicated advisory firm supporting ventures with reliable accounting and statutory compliance.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h5 class="text-white font-bold text-sm mb-4">Quick Links</h5>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#home" class="hover:text-white transition">Home</a></li>
+            <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+            <li><a href="#services" class="hover:text-white transition">Services Portfolio</a></li>
+            <li><a href="#why-us" class="hover:text-white transition">Why Choose Maraqs</a></li>
+            <li><a href="#faqs" class="hover:text-white transition">Legal & Tax FAQs</a></li>
+            <li><a href="#contact" class="hover:text-white transition">Get In Touch</a></li>
+          </ul>
+        </div>
+
+        <!-- Core Solutions -->
+        <div>
+          <h5 class="text-white font-bold text-sm mb-4">Core Services</h5>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#services" class="hover:text-white transition">GST Registration & Filing</a></li>
+            <li><a href="#services" class="hover:text-white transition">Income Tax Return (ITR)</a></li>
+            <li><a href="#services" class="hover:text-white transition">Company Incorporation (MCA)</a></li>
+            <li><a href="#services" class="hover:text-white transition">TDS Reconciliation & Returns</a></li>
+            <li><a href="#services" class="hover:text-white transition">GST Scrutiny & Notice Drafting</a></li>
+            <li><a href="#services" class="hover:text-white transition">Class 3 DSC Issuance</a></li>
+          </ul>
+        </div>
+
+        <!-- Reach Out -->
+        <div>
+          <h5 class="text-white font-bold text-sm mb-4">Contact Info</h5>
+          <ul class="space-y-2.5 text-xs">
+            <li class="leading-relaxed">876/5, Shalimar Garden Extn-1, Ghaziabad, U.P 201005</li>
+            <li>Call: <a href="tel:+919355476488" class="text-slate-300 hover:text-white">+91 9355476488</a></li>
+            <li>WhatsApp: <a href="https://wa.me/918595255099" class="text-emerald-400 hover:underline">+91 8595255099</a></li>
+            <li>Email: <a href="mailto:official.maraqs@gmail.com" class="text-slate-300 hover:text-white">official.maraqs@gmail.com</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <p>© 2026 Maraqs Commerce. All rights reserved.</p>
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-400">Terms & Conditions</a>
+          <a href="#contact" class="hover:text-slate-400">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp CTA Widget -->
+  <a href="https://wa.me/918595255099?text=Hello%20Maraqs%20Commerce,%20I%20need%20assistance%20with%20Tax/Registration" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110" aria-label="Chat on WhatsApp">
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.539 1.796.819 2.791.82 3.18 0 5.767-2.587 5.768-5.766.001-3.18-2.586-5.766-5.768-5.766zm9.969 5.768c0 5.523-4.478 10-10 10-1.74 0-3.37-.449-4.801-1.233l-5.199 1.363 1.391-5.083c-.88-1.488-1.391-3.23-1.391-5.047 0-5.523 4.477-10 10-10 5.522 0 10 4.477 10 10z"/></svg>
+  </a>
+
+  <!-- Script for Mobile Drawer and Form Handling -->
+  <script>
+    // Mobile Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('hidden');
+    });
+
+    // Form Submission Routing to WhatsApp
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('formName').value;
+      const phone = document.getElementById('formPhone').value;
+      const email = document.getElementById('formEmail').value;
+      const service = document.getElementById('formService').value;
+      const msg = document.getElementById('formMessage').value;
+
+      // WhatsApp formatted message
+      const text = `*New Inquiry via Maraqs Commerce Website*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Email:* ${encodeURIComponent(email)}%0A*Service:* ${encodeURIComponent(service)}%0A*Details:* ${encodeURIComponent(msg || 'None')}`;
+      
+      document.getElementById('successNotice').classList.remove('hidden');
+      
+      // Auto open WhatsApp chat with details
+      setTimeout(() => {
+        window.open(`https://wa.me/918595255099?text=${text}`, '_blank');
+      }, 700);
+    }
+  </script>
+</body>
+</html>
