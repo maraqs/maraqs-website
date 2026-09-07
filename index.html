@@ -9,27 +9,28 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif']
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif']
           },
           colors: {
             brand: {
-              50: '#f0f6ff',
-              100: '#e0effe',
+              50: '#eff6ff',
+              100: '#dbeafe',
               500: '#2563eb',
               600: '#1d4ed8',
               700: '#1e40af',
               navy: '#090d16',
-              slate: '#1e293b'
+              surface: '#0f172a'
             }
           }
         }
@@ -38,55 +39,31 @@
   </script>
 
   <style>
-    .top-announcement-bar {
+    .top-bar {
       background: linear-gradient(90deg, #071426 0%, #0b1f3d 52%, #123a63 100%);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
     }
     .portal-nav-shell {
-      background: rgba(255, 255, 255, 0.98) !important;
+      background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(16px);
-      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
-    }
-    .desktop-main-nav {
-      flex-wrap: nowrap;
-      white-space: nowrap;
-    }
-    .portal-nav-item {
-      position: relative;
     }
     .portal-nav-trigger {
       display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
+      gap: 0.35rem;
       padding: 1.15rem 0.6rem;
       font-size: 13px;
-      font-weight: 650;
+      font-weight: 600;
       color: #334155;
-      transition: all 0.2s;
+      transition: all 0.2s ease;
     }
     .portal-nav-trigger:hover {
       color: #1d4ed8;
-      background: #f8fafc;
-    }
-    .portal-nav-item:after {
-      content: '';
-      position: absolute;
-      left: 0.5rem;
-      right: 0.5rem;
-      bottom: 0;
-      height: 2px;
-      background: #2563eb;
-      transform: scaleX(0);
-      transition: 0.2s;
-    }
-    .portal-nav-item:hover:after {
-      transform: scaleX(1);
     }
     .mega-dropdown {
       opacity: 0;
       visibility: hidden;
       transform: translateY(8px);
-      transition: all 0.2s ease-in-out;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .portal-nav-item:hover .mega-dropdown {
       opacity: 1;
@@ -96,18 +73,18 @@
     .portal-nav-dropdown {
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
-      padding: 14px;
+      border-radius: 14px;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+      padding: 12px;
     }
     .portal-nav-dropdown a {
       display: block;
-      padding: 7px 10px;
-      border-radius: 8px;
+      padding: 6px 10px;
+      border-radius: 6px;
       color: #334155;
       font-size: 12.5px;
-      font-weight: 600;
-      transition: 0.15s;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s;
     }
     .portal-nav-dropdown a:hover {
       background: #eff6ff;
@@ -121,151 +98,72 @@
       color: #2563eb;
       padding: 4px 10px 6px;
     }
-    .maraqs-ai-launcher {
+    .ai-launcher {
       position: fixed;
-      right: 22px;
-      bottom: 22px;
+      right: 20px;
+      bottom: 20px;
       z-index: 1000;
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
       border: 0;
       cursor: pointer;
       color: #fff;
-      background: linear-gradient(135deg, #2563eb, #1d4ed8 55%, #0f766e);
+      background: linear-gradient(135deg, #2563eb, #1d4ed8 60%, #0f766e);
       box-shadow: 0 16px 36px rgba(37, 99, 235, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: 0.25s;
+      transition: transform 0.2s;
     }
-    .maraqs-ai-launcher:hover { transform: scale(1.05); }
-    .maraqs-ai-launcher .ai-dot {
-      position: absolute;
-      right: 2px;
-      top: 2px;
-      width: 12px;
-      height: 12px;
-      background: #10b981;
-      border: 2.5px solid #fff;
-      border-radius: 999px;
-    }
-    .maraqs-ai-panel {
+    .ai-launcher:hover { transform: scale(1.05); }
+    .ai-panel {
       position: fixed;
-      right: 22px;
-      bottom: 90px;
+      right: 20px;
+      bottom: 86px;
       z-index: 1001;
-      width: min(390px, calc(100vw - 28px));
-      height: min(580px, calc(100vh - 110px));
+      width: min(380px, calc(100vw - 32px));
+      height: min(540px, calc(100vh - 110px));
       background: #fff;
       border: 1px solid #dbe4ef;
-      border-radius: 20px;
-      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.22);
+      border-radius: 18px;
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.2);
       overflow: hidden;
       display: none;
       flex-direction: column;
     }
-    .maraqs-ai-panel.open { display: flex; }
-    .maraqs-ai-head {
-      padding: 14px 16px;
-      background: linear-gradient(135deg, #071426, #123a63);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .maraqs-ai-avatar {
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #60a5fa, #34d399);
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      font-size: 13px;
-    }
-    .maraqs-ai-messages {
-      flex: 1;
-      overflow-y: auto;
-      padding: 14px;
-      background: #f8fafc;
-    }
+    .ai-panel.open { display: flex; }
     .ai-msg {
-      max-width: 88%;
-      padding: 10px 12px;
-      border-radius: 14px;
+      max-width: 86%;
+      padding: 10px 14px;
+      border-radius: 12px;
       margin-bottom: 8px;
       font-size: 13px;
       line-height: 1.5;
-      white-space: pre-wrap;
     }
     .ai-bot {
-      background: #fff;
-      border: 1px solid #e2e8f0;
-      color: #334155;
-      border-bottom-left-radius: 4px;
+      background: #f1f5f9;
+      color: #1e293b;
+      border-bottom-left-radius: 2px;
     }
     .ai-user {
       background: #2563eb;
       color: #fff;
       margin-left: auto;
-      border-bottom-right-radius: 4px;
-    }
-    .maraqs-ai-suggestions {
-      padding: 0 12px 8px;
-      display: flex;
-      gap: 6px;
-      overflow-x: auto;
-      background: #fff;
-    }
-    .ai-suggest {
-      white-space: nowrap;
-      border: 1px solid #dbeafe;
-      background: #eff6ff;
-      color: #1d4ed8;
-      border-radius: 999px;
-      padding: 6px 9px;
-      font-size: 11px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    .maraqs-ai-form {
-      padding: 10px;
-      border-top: 1px solid #e2e8f0;
-      display: flex;
-      gap: 6px;
-      background: #fff;
-    }
-    .maraqs-ai-input {
-      flex: 1;
-      border: 1px solid #cbd5e1;
-      border-radius: 12px;
-      padding: 9px 12px;
-      font-size: 13px;
-      outline: none;
-    }
-    .maraqs-ai-input:focus { border-color: #2563eb; }
-    .maraqs-ai-send {
-      width: 40px;
-      border: 0;
-      border-radius: 12px;
-      background: #2563eb;
-      color: #fff;
-      font-weight: 700;
-      cursor: pointer;
+      border-bottom-right-radius: 2px;
     }
   </style>
 </head>
 
-<body class="bg-[#f8fafc] text-slate-800 antialiased selection:bg-brand-600 selection:text-white flex flex-col min-h-screen">
+<body class="bg-[#f8fafc] text-slate-800 antialiased flex flex-col min-h-screen">
 
   <!-- Top Announcement Bar -->
-  <div class="top-announcement-bar text-slate-200 text-xs py-2 px-4">
-    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
-      <div class="flex items-center gap-3">
+  <aside aria-label="Announcement" class="top-bar text-slate-200 text-xs py-2 px-4 border-b border-slate-700/40">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
         <span class="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-          8+ Years of Corporate & Tax Compliance Excellence
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          8+ Years of Corporate Advisory & Tax Defense
         </span>
       </div>
 
@@ -274,321 +172,196 @@
           <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
           <span>+91 9355476488</span>
         </a>
-        <a href="mailto:official.maraqs@gmail.com" class="hidden md:flex items-center gap-1.5 hover:text-white font-medium">
-          <svg class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          <span>official.maraqs@gmail.com</span>
-        </a>
-        <a href="https://wa.me/919355476488?text=Hello%20Maraqs%20Commerce%2C%20I%20need%20assistance%20with%20corporate%20compliance." target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1 transition">
-          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.539 1.796.819 2.791.82 3.18 0 5.767-2.587 5.768-5.766.001-3.18-2.586-5.766-5.768-5.766zm9.969 5.768c0 5.523-4.478 10-10 10-1.74 0-3.37-.449-4.801-1.233l-5.199 1.363 1.391-5.083c-.88-1.488-1.391-3.23-1.391-5.047 0-5.523 4.477-10 10-10 5.522 0 10 4.477 10 10z"/></svg>
-          Quick WhatsApp Desk
+        <a href="https://wa.me/919355476488?text=Hello%20Maraqs%20Commerce%2C%20I%20need%20assistance." target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1">
+          WhatsApp Desk
         </a>
       </div>
     </div>
-  </div>
+  </aside>
 
-  <!-- Corporate Header with Full Mega Menu -->
-  <header class="portal-nav-shell sticky top-0 z-50 transition-all duration-200">
-    <div class="max-w-[1600px] mx-auto px-4 sm:px-6">
+  <!-- Sticky Navbar -->
+  <header class="portal-nav-shell sticky top-0 z-40 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="flex items-center justify-between h-[72px]">
         
+        <!-- Brand Logo -->
         <a href="#home" class="flex items-center gap-3 shrink-0">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-navy via-brand-700 to-brand-500 flex items-center justify-center text-white font-black text-lg shadow-md">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-navy via-brand-700 to-brand-500 flex items-center justify-center text-white font-black text-lg shadow-sm">
             MC
           </div>
           <div>
-            <span class="text-lg font-black tracking-tight text-slate-900 block leading-none">
+            <span class="text-lg font-heading font-extrabold tracking-tight text-slate-900 block leading-none">
               MARAQS <span class="text-brand-600">COMMERCE</span>
             </span>
-            <span class="text-[10px] tracking-wider uppercase font-bold text-slate-500 block mt-1">
+            <span class="text-[10px] tracking-wider uppercase font-semibold text-slate-500 block mt-1">
               Pvt Ltd &bull; Corporate Advisors
             </span>
           </div>
         </a>
 
-        <!-- Desktop Navigation Bar -->
-        <nav class="desktop-main-nav hidden xl:flex items-center text-slate-700">
-          <a href="#about" class="portal-nav-trigger font-bold text-brand-600">About Us</a>
+        <!-- Desktop Navigation -->
+        <nav aria-label="Desktop Navigation" class="hidden xl:flex items-center space-x-1">
+          <a href="#about" class="portal-nav-trigger">About Us</a>
 
-          <!-- 1. Startup -->
-          <div class="portal-nav-item">
+          <div class="portal-nav-item relative">
             <button class="portal-nav-trigger"><span>Startup</span><svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
-            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50 min-w-[270px]">
+            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50 min-w-[240px]">
               <div class="portal-nav-label">Entity Setup</div>
               <a href="javascript:void(0)" onclick="selectHeadAndOpen('startup', 0)">Proprietorship</a>
               <a href="javascript:void(0)" onclick="selectHeadAndOpen('startup', 1)">Partnership</a>
               <a href="javascript:void(0)" onclick="selectHeadAndOpen('startup', 2)">One Person Company</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('startup', 3)">Limited Liability Partnership</a>
+              <a href="javascript:void(0)" onclick="selectHeadAndOpen('startup', 3)">LLP Registration</a>
               <a href="javascript:void(0)" onclick="selectHeadAndOpen('startup', 4)">Private Limited Company</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('startup', 5)">Section 8 Company</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('startup', 6)">Trust Registration</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('startup', 7)">Public Limited Company</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('startup', 8)">Producer Company</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('startup', 9)">Indian Subsidiary</a>
             </div>
           </div>
 
-          <!-- 2. Registrations -->
-          <div class="portal-nav-item">
+          <div class="portal-nav-item relative">
             <button class="portal-nav-trigger"><span>Registrations</span><svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
-            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50 min-w-[540px] grid grid-cols-2 gap-2">
-              <div>
-                <div class="portal-nav-label">General & Quality</div>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 0)">Startup India</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 1)">Trade License</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 2)">FSSAI Registration</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 3)">FSSAI License</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 4)">Halal License & Certification</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 7)">ISO Registration</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 13)">BIS Registration</a>
-              </div>
-              <div>
-                <div class="portal-nav-label">Tax & Regulatory</div>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 5)">ICEGATE Registration</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 6)">Import Export Code</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 8)">PF Registration</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 9)">ESI Registration</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 10)">12A and 80G Registration</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 11)">Digital Signature</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 12)">Udyam Registration</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3. Trademark -->
-          <div class="portal-nav-item">
-            <button class="portal-nav-trigger"><span>Trademark</span><svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
-            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50 min-w-[480px] grid grid-cols-2 gap-2">
-              <div>
-                <div class="portal-nav-label">Filings & IP</div>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('trademark', 0)">Trademark Registration</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('trademark', 2)">Trademark Certificate</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('trademark', 6)">Trademark Renewal</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('trademark', 7)">Logo Designing</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('trademark', 8)">Design Registration</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('trademark', 9)">Copyright Registration</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('trademark', 10)">Patent Registration</a>
-              </div>
-              <div>
-                <div class="portal-nav-label">Disputes & Replies</div>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('trademark', 1)">Trademark Objection</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('trademark', 3)">Trademark Opposition</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('trademark', 4)">Trademark Hearing</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('trademark', 5)">TM Infringement Notice</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4. GST -->
-          <div class="portal-nav-item">
-            <button class="portal-nav-trigger"><span>GST</span><svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
-            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50 min-w-[280px]">
-              <div class="portal-nav-label">GST Compliance</div>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('gst', 0)">GST Registration</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('gst', 1)">GST Return Filing by Accountant</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('gst', 2)">GST LUT Form</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('gst', 3)">GST Notice Defense</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('gst', 4)">GSTR-9 Annual Return</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('gst', 5)">GST Amendment</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('gst', 6)">Virtual Office + GSTIN</a>
-            </div>
-          </div>
-
-          <!-- 5. Income Tax -->
-          <div class="portal-nav-item">
-            <button class="portal-nav-trigger"><span>Income Tax</span><svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
-            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50 min-w-[280px]">
-              <div class="portal-nav-label">Direct Tax Desk</div>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('tax', 0)">Income Tax E-Filing</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('tax', 1)">Business ITR Filing</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('tax', 2)">Company ITR Filing</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('tax', 3)">15CA - 15CB Filing</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('tax', 4)">TDS Return Filing</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('tax', 5)">Income Tax Notice Reply</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('tax', 6)">Revised ITR Return (ITR-U)</a>
-            </div>
-          </div>
-
-          <!-- 6. MCA -->
-          <div class="portal-nav-item">
-            <button class="portal-nav-trigger"><span>MCA</span><svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
-            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50 min-w-[500px] grid grid-cols-2 gap-2">
-              <div>
-                <div class="portal-nav-label">Company Compliance</div>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('mca', 0)">Company Compliance (AOC-4)</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('mca', 1)">LLP Compliance (Form 8 & 11)</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('mca', 2)">DIN eKYC Filing</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('mca', 3)">Director Change (DIR-12)</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('mca', 4)">ADT-1 Auditor Filing</a>
-              </div>
-              <div>
-                <div class="portal-nav-label">Capital & Closure</div>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('mca', 5)">MOA / AOA Amendment</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('mca', 6)">Authorized Capital Increase</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('mca', 7)">Demat of Shares</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('mca', 8)">Winding Up - Company</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('mca', 9)">Commencement (INC-20A)</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 7. Compliance -->
-          <div class="portal-nav-item">
-            <button class="portal-nav-trigger"><span>Compliance</span><svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
-            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50 min-w-[480px] grid grid-cols-2 gap-2">
-              <div>
-                <div class="portal-nav-label">FDI & Regulatory</div>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('compliance', 0)">FDI Filing (FC-GPR)</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('compliance', 1)">ODI Filing</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('compliance', 2)">FLA Return Filing</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('compliance', 3)">FSSAI License Renewal</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('compliance', 4)">Investor Business Plan</a>
-              </div>
-              <div>
-                <div class="portal-nav-label">Retainers & Books</div>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('compliance', 5)">HR & Payroll Retainer</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('compliance', 6)">PF Return Filing</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('compliance', 7)">ESI Return Filing</a>
-                <a href="javascript:void(0)" onclick="selectHeadAndOpen('compliance', 8)">Cloud Bookkeeping</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 8. International -->
-          <div class="portal-nav-item">
-            <button class="portal-nav-trigger"><span>International</span><svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
             <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50 min-w-[260px]">
-              <div class="portal-nav-label">Global Formation</div>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('international', 0)">UAE Company Registration</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('international', 1)">USA Company Registration</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('international', 2)">Singapore Business Setup</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('international', 3)">UK Company Registration</a>
-              <a href="javascript:void(0)" onclick="selectHeadAndOpen('international', 4)">USA Trademark Registration</a>
+              <div class="portal-nav-label">Licensing & Standards</div>
+              <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 2)">FSSAI Registration</a>
+              <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 3)">FSSAI License</a>
+              <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 6)">Import Export Code (IEC)</a>
+              <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 7)">ISO Certification</a>
+              <a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 12)">Udyam MSME</a>
             </div>
           </div>
 
-          <a href="#reviews" class="portal-nav-trigger">Reviews ⭐</a>
-          <a href="#location" class="portal-nav-trigger">Location 📍</a>
+          <div class="portal-nav-item relative">
+            <button class="portal-nav-trigger"><span>GST Desk</span><svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
+            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50 min-w-[250px]">
+              <div class="portal-nav-label">GST Compliance</div>
+              <a href="javascript:void(0)" onclick="selectHeadAndOpen('gst', 0)">New GST Registration</a>
+              <a href="javascript:void(0)" onclick="selectHeadAndOpen('gst', 1)">Monthly GSTR-1 & 3B</a>
+              <a href="javascript:void(0)" onclick="selectHeadAndOpen('gst', 2)">GST LUT (Exports)</a>
+              <a href="javascript:void(0)" onclick="selectHeadAndOpen('gst', 3)">GST Notice Defense (ASMT-10)</a>
+            </div>
+          </div>
+
+          <div class="portal-nav-item relative">
+            <button class="portal-nav-trigger"><span>Income Tax</span><svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
+            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50 min-w-[240px]">
+              <div class="portal-nav-label">Direct Tax</div>
+              <a href="javascript:void(0)" onclick="selectHeadAndOpen('tax', 0)">Individual ITR Filing</a>
+              <a href="javascript:void(0)" onclick="selectHeadAndOpen('tax', 1)">Business ITR (Presumptive)</a>
+              <a href="javascript:void(0)" onclick="selectHeadAndOpen('tax', 2)">Company Corporate ITR</a>
+              <a href="javascript:void(0)" onclick="selectHeadAndOpen('tax', 5)">Tax Notice Defense</a>
+            </div>
+          </div>
+
+          <a href="#reviews" class="portal-nav-trigger">Reviews</a>
+          <a href="#location" class="portal-nav-trigger">Location</a>
           <a href="#contact" class="portal-nav-trigger">Contact</a>
         </nav>
 
-        <!-- Right Action Button -->
-        <div class="hidden sm:flex items-center space-x-3 shrink-0">
-          <a href="https://wa.me/919355476488?text=Hi%20Maraqs%20Commerce%2C%20I%20want%20to%20consult%20regarding%20corporate%20compliance" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition">
-            <svg class="w-4 h-4 fill-emerald-600" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.539 1.796.819 2.791.82 3.18 0 5.767-2.587 5.768-5.766.001-3.18-2.586-5.766-5.768-5.766zm9.969 5.768c0 5.523-4.478 10-10 10-1.74 0-3.37-.449-4.801-1.233l-5.199 1.363 1.391-5.083c-.88-1.488-1.391-3.23-1.391-5.047 0-5.523 4.477-10 10-10 5.522 0 10 4.477 10 10z"/></svg>
-            <span>WhatsApp</span>
+        <!-- Right Quick Actions -->
+        <div class="flex items-center space-x-3">
+          <a href="#contact" class="hidden sm:inline-flex items-center px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold shadow-sm transition">
+            Book Consultation
           </a>
 
-          <a href="#contact" 
-             class="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-extrabold shadow-md transition">
-            <span>Book Consultation</span>
-          </a>
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobileMenuBtn" aria-label="Toggle Mobile Menu" class="xl:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <nav aria-label="Mobile Navigation" id="mobileDrawer" class="hidden xl:hidden bg-white border-b border-slate-200 px-5 py-4 space-y-3 text-sm font-medium">
+      <a href="#home" class="block py-1 text-slate-800" onclick="toggleMobileMenu()">Home</a>
+      <a href="#services-catalog" class="block py-1 text-slate-800" onclick="toggleMobileMenu()">Services Catalog</a>
+      <a href="#about" class="block py-1 text-slate-800" onclick="toggleMobileMenu()">About MCA Entity</a>
+      <a href="#reviews" class="block py-1 text-slate-800" onclick="toggleMobileMenu()">Client Reviews</a>
+      <a href="#contact" class="block py-1 text-slate-800" onclick="toggleMobileMenu()">Contact & Helpdesk</a>
+      <a href="https://wa.me/919355476488" target="_blank" class="block text-emerald-600 font-bold py-1">WhatsApp Direct Desk (+91 9355476488)</a>
+    </nav>
   </header>
 
   <main class="flex-grow">
     <!-- Hero Section -->
-    <section id="home" class="relative pt-12 pb-16 md:pt-16 md:pb-24 bg-gradient-to-b from-blue-50/40 via-white to-slate-50">
+    <section id="home" class="pt-12 pb-16 md:pt-20 md:pb-24 bg-gradient-to-b from-blue-50/50 via-white to-slate-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-12 gap-12 items-center">
           <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-brand-navy tracking-tight leading-[1.15]">
-              India’s Unified Platform for <br class="hidden sm:inline" />
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-blue-600 to-indigo-700">
-                Tax, Registrations & Business Compliance
-              </span>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100/70 border border-blue-200 text-brand-700 text-xs font-semibold">
+              <span>Verified Corporate Advisors</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl font-heading font-extrabold text-brand-navy tracking-tight leading-[1.18]">
+              Seamless Tax, Registrations & MCA Corporate Governance
             </h1>
 
-            <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-              From day-one Private Limited / LLP incorporation and FSSAI licenses to monthly GST returns and income tax defense—managed by certified corporate consultants.
+            <p class="text-base text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+              From Private Limited / LLP incorporation and FSSAI licensing to monthly GST returns and income tax notice defense—managed with precision by certified advisors.
             </p>
 
-            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-              <a href="#services-catalog" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg transition">
-                <span>Explore Compliance Catalog</span>
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+              <a href="#services-catalog" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md transition">
+                <span>Explore Document Finder</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
               </a>
 
-              <a href="https://wa.me/919355476488" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm border border-slate-300 shadow-xs transition">
-                <span>Chat on WhatsApp (+91 9355476488)</span>
+              <a href="https://wa.me/919355476488?text=Hello%20Maraqs%20Commerce" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm border border-slate-300 shadow-xs transition">
+                <span>Chat on WhatsApp</span>
               </a>
             </div>
 
-            <!-- Trust Badges -->
-            <div class="pt-6 border-t border-slate-200 grid grid-cols-2 sm:grid-cols-4 gap-4 text-left">
-              <div class="p-3.5 bg-white border border-slate-200 rounded-xl">
-                <span class="text-2xl font-extrabold text-brand-navy">8+ Years</span>
-                <p class="text-[11px] text-slate-500 font-medium mt-0.5">Corporate Heritage</p>
+            <!-- Badges -->
+            <div class="pt-6 border-t border-slate-200 grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
+              <div class="p-3 bg-white border border-slate-200 rounded-xl">
+                <span class="text-xl font-extrabold text-brand-navy font-heading">8+ Years</span>
+                <p class="text-[11px] text-slate-500 font-medium">Corporate Heritage</p>
               </div>
-              <div class="p-3.5 bg-white border border-slate-200 rounded-xl">
-                <span class="text-2xl font-extrabold text-brand-navy">MCA Active</span>
-                <p class="text-[11px] text-slate-500 font-medium mt-0.5">RoC Registered Entity</p>
+              <div class="p-3 bg-white border border-slate-200 rounded-xl">
+                <span class="text-xl font-extrabold text-brand-navy font-heading">RoC Kanpur</span>
+                <p class="text-[11px] text-slate-500 font-medium">Active Registration</p>
               </div>
-              <div class="p-3.5 bg-white border border-slate-200 rounded-xl">
-                <span class="text-2xl font-extrabold text-brand-navy">100%</span>
-                <p class="text-[11px] text-slate-500 font-medium mt-0.5">Statutory Guarantee</p>
+              <div class="p-3 bg-white border border-slate-200 rounded-xl">
+                <span class="text-xl font-extrabold text-brand-navy font-heading">5,000+</span>
+                <p class="text-[11px] text-slate-500 font-medium">Filings Delivered</p>
               </div>
-              <div class="p-3.5 bg-white border border-slate-200 rounded-xl">
-                <span class="text-2xl font-extrabold text-brand-navy">4.9 / 5</span>
-                <p class="text-[11px] text-slate-500 font-medium mt-0.5">Google Rating</p>
+              <div class="p-3 bg-white border border-slate-200 rounded-xl">
+                <span class="text-xl font-extrabold text-brand-navy font-heading">4.9 / 5</span>
+                <p class="text-[11px] text-slate-500 font-medium">Client Rating</p>
               </div>
             </div>
           </div>
 
-          <!-- Dashboard Card -->
+          <!-- Side Status Card -->
           <div class="lg:col-span-5">
-            <div class="bg-white rounded-3xl border border-slate-200 shadow-xl p-6">
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-lg p-6">
               <div class="flex items-center justify-between pb-4 border-b border-slate-100">
-                <span class="text-xs font-bold text-slate-700">Maraqs Compliance Center</span>
-                <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">Active Retainers</span>
+                <span class="text-xs font-bold text-slate-800 uppercase tracking-wider">Compliance Dashboard</span>
+                <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">All Systems Green</span>
               </div>
 
               <div class="pt-4 space-y-3">
                 <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-lg bg-blue-100 text-brand-600 flex items-center justify-center text-xs font-bold">MCA</div>
-                    <div>
-                      <p class="text-xs font-bold text-slate-800">Maraqs Commerce Pvt Ltd</p>
-                      <p class="text-[10px] text-slate-500">RoC Kanpur Registered</p>
-                    </div>
+                  <div>
+                    <p class="text-xs font-bold text-slate-800">Maraqs Commerce Pvt Ltd</p>
+                    <p class="text-[11px] text-slate-500">Ministry of Corporate Affairs</p>
+                  </div>
+                  <span class="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">Active</span>
+                </div>
+
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                  <div>
+                    <p class="text-xs font-bold text-slate-800">GST Input Tax Credit Match</p>
+                    <p class="text-[11px] text-slate-500">Form 3B vs 2B Reconciliation</p>
+                  </div>
+                  <span class="text-[11px] font-bold text-brand-600 bg-blue-50 px-2 py-1 rounded">100% Reconciled</span>
+                </div>
+
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                  <div>
+                    <p class="text-xs font-bold text-slate-800">FoSCoS Food Safety Licensing</p>
+                    <p class="text-[11px] text-slate-500">Turnover Verification Support</p>
                   </div>
                   <span class="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">Verified</span>
-                </div>
-
-                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">FSSAI</div>
-                    <div>
-                      <p class="text-xs font-bold text-slate-800">FoSCoS Food Safety License</p>
-                      <p class="text-[10px] text-emerald-600">Turnover & Category Verified</p>
-                    </div>
-                  </div>
-                  <span class="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">Compliant</span>
-                </div>
-
-                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold">GST</div>
-                    <div>
-                      <p class="text-xs font-bold text-slate-800">GSTR-3B & GSTR-1 Match</p>
-                      <p class="text-[10px] text-slate-500">100% 2B ITC Reconciled</p>
-                    </div>
-                  </div>
-                  <span class="text-[11px] font-bold text-brand-600 bg-blue-50 px-2 py-1 rounded">Filed</span>
-                </div>
-
-                <div class="p-4 rounded-2xl bg-gradient-to-r from-brand-navy to-blue-900 text-white mt-4">
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs text-blue-200">Regulatory Compliance Score</span>
-                    <span class="text-xs font-extrabold text-emerald-400">99.9% Perfect</span>
-                  </div>
-                  <div class="w-full bg-blue-950 h-2 rounded-full overflow-hidden">
-                    <div class="bg-emerald-400 h-full rounded-full w-[99%]"></div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -597,29 +370,29 @@
       </div>
     </section>
 
-    <!-- INTERACTIVE 3-STEP DOCUMENT FINDER -->
+    <!-- Services Catalog / Document Finder -->
     <section id="services-catalog" class="py-16 bg-white border-y border-slate-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-10">
           <span class="text-xs font-extrabold uppercase tracking-wider text-brand-600 bg-blue-50 border border-blue-100 px-3.5 py-1 rounded-full">
-            Interactive Document & Compliance Finder
+            Interactive Document Checklist
           </span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-3">
-            Click by Click: Select Category & View Documents
+          <h2 class="text-3xl font-heading font-extrabold text-brand-navy mt-3">
+            Select Service & Check Mandatory Documents
           </h2>
           <p class="text-slate-600 text-sm mt-2">
-            Pehle category head select karein, fir kisi bhi service card par tap karke mandatory documents checklist aur turnaround time check karein.
+            Kisi bhi service card par click karke uske jaruri documents aur statutory deliverables checklist dekhein.
           </p>
         </div>
 
-        <!-- Step 1: Head Categories Tabs -->
+        <!-- Category Tabs -->
         <div class="flex items-center gap-2 overflow-x-auto pb-4 border-b border-slate-200" id="catalogTabsBar"></div>
 
-        <!-- Step 2: Sub-services Grid -->
+        <!-- Cards Grid -->
         <div class="mt-8">
           <div class="flex items-center justify-between mb-5">
-            <h3 id="currentHeadLabel" class="text-xl font-extrabold text-brand-navy"></h3>
+            <h3 id="currentHeadLabel" class="text-xl font-bold font-heading text-brand-navy"></h3>
             <span id="serviceCountBadge" class="text-xs font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-700"></span>
           </div>
           <div id="catalogGrid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
@@ -628,300 +401,54 @@
       </div>
     </section>
 
-    <!-- Corporate About Us with MCA Data & 8-Year Journey -->
-    <section id="about" class="py-20 bg-slate-50 border-b border-slate-200">
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-slate-50 border-b border-slate-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-14">
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-blue-50 px-3 py-1 rounded-full">
-            About Maraqs Commerce
-          </span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-3">
-            8+ Years of Trusted Corporate Governance & Tax Advisory
-          </h2>
-          <p class="text-slate-600 text-sm mt-2">
-            Established with a vision to simplify corporate compliance, Maraqs Commerce Pvt Ltd delivers reliable accounting, tax defense, and business licensing across India.
-          </p>
-        </div>
-
         <div class="grid lg:grid-cols-12 gap-10 items-start">
           <div class="lg:col-span-7 space-y-6">
-            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-              <h3 class="text-xl font-bold text-slate-900 mb-3">Professional Heritage & Values</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Founded over 8 years ago, <strong>Maraqs Commerce Pvt Ltd</strong> has grown from a specialized tax boutique in Ghaziabad into a comprehensive, multi-disciplinary corporate consulting firm. We serve emerging startups, proprietorships, MSMEs, and established corporate companies across Delhi-NCR and PAN India.
+            <div class="bg-white rounded-2xl p-7 border border-slate-200">
+              <h2 class="text-2xl font-bold font-heading text-slate-900 mb-3">Professional Heritage & 8-Year Journey</h2>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Founded over 8 years ago, <strong>Maraqs Commerce Pvt Ltd</strong> has grown from a specialized tax boutique in Ghaziabad into a comprehensive corporate consultancy serving clients across Delhi-NCR and PAN India.
               </p>
-              <div class="grid sm:grid-cols-3 gap-4 mt-6 pt-6 border-t border-slate-100">
+              <div class="grid sm:grid-cols-3 gap-4 mt-6 pt-6 border-t border-slate-100 text-center sm:text-left">
                 <div>
-                  <span class="text-2xl font-black text-brand-navy">8+</span>
-                  <p class="text-xs font-semibold text-slate-500 mt-0.5">Years Journey</p>
-                </div>
-                <div>
-                  <span class="text-2xl font-black text-brand-navy">5,000+</span>
-                  <p class="text-xs font-semibold text-slate-500 mt-0.5">Filings Completed</p>
+                  <span class="text-2xl font-extrabold font-heading text-brand-navy">8+</span>
+                  <p class="text-xs font-semibold text-slate-500">Years Active</p>
                 </div>
                 <div>
-                  <span class="text-2xl font-black text-brand-navy">PAN-India</span>
-                  <p class="text-xs font-semibold text-slate-500 mt-0.5">Digital Reach</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Milestone Timeline -->
-            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-              <h3 class="text-base font-bold text-slate-900 mb-6">Our 8-Year Journey & Milestones</h3>
-              <div class="relative pl-6 space-y-7 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-blue-100">
-                <div class="relative">
-                  <span class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-brand-600 ring-4 ring-blue-50"></span>
-                  <span class="text-xs font-bold text-brand-600">Phase 1 &bull; Inception & Foundation</span>
-                  <h4 class="text-sm font-bold text-slate-900 mt-0.5">Corporate Advisory Operations Launched</h4>
-                  <p class="text-xs text-slate-600 mt-1">Established regional taxation, company formation, and manual accounting consultation in Delhi-NCR.</p>
-                </div>
-                <div class="relative">
-                  <span class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-brand-600 ring-4 ring-blue-50"></span>
-                  <span class="text-xs font-bold text-brand-600">Phase 2 &bull; GST Transition & MCA V2 Suite</span>
-                  <h4 class="text-sm font-bold text-slate-900 mt-0.5">National GST Regime & Cloud Accounting Retainers</h4>
-                  <p class="text-xs text-slate-600 mt-1">Guided hundreds of enterprises through nationwide GST adoption, Input Tax Credit (ITC) reconciliation, and MCA annual corporate filings.</p>
-                </div>
-                <div class="relative">
-                  <span class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-brand-600 ring-4 ring-blue-50"></span>
-                  <span class="text-xs font-bold text-brand-600">Phase 3 &bull; Regulatory Expansion (FSSAI & Scrutiny Defense)</span>
-                  <h4 class="text-sm font-bold text-slate-900 mt-0.5">FoSCoS Food Safety Licensing & Tax Scrutiny Division</h4>
-                  <p class="text-xs text-slate-600 mt-1">Added full-fledged FSSAI Basic, State, and Central Licensing desks alongside ASMT-10 / DRC-01 GST Notice Legal Defense.</p>
-                </div>
-                <div class="relative">
-                  <span class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-emerald-50"></span>
-                  <span class="text-xs font-bold text-emerald-700">Present &bull; PAN-India Digital Platform</span>
-                  <h4 class="text-sm font-bold text-slate-900 mt-0.5">Unified Online Compliance Portal with Dedicated Desk</h4>
-                  <p class="text-xs text-slate-600 mt-1">Serving clients in all 28 states with end-to-end digital documentation, instant WhatsApp resolution, and real-time filings.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Official MCA Profile Card -->
-          <div class="lg:col-span-5">
-            <div class="bg-brand-navy text-white rounded-3xl p-7 shadow-xl border border-slate-800">
-              <div class="flex items-center justify-between pb-4 border-b border-slate-800">
-                <div class="flex items-center gap-2">
-                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-                  <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Ministry of Corporate Affairs</span>
-                </div>
-                <span class="text-[10px] font-extrabold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">Active & Compliant</span>
-              </div>
-
-              <div class="pt-5 space-y-4 text-xs">
-                <div>
-                  <p class="text-[10px] text-slate-400 uppercase font-bold">Company Legal Name</p>
-                  <p class="text-base font-extrabold text-white mt-0.5">Maraqs Commerce Pvt Ltd</p>
-                </div>
-                <div class="grid grid-cols-2 gap-3 pt-2">
-                  <div>
-                    <p class="text-[10px] text-slate-400 uppercase font-bold">Class of Company</p>
-                    <p class="font-semibold text-slate-200 mt-0.5">Private Limited (Pvt Ltd)</p>
-                  </div>
-                  <div>
-                    <p class="text-[10px] text-slate-400 uppercase font-bold">Registrar of Companies</p>
-                    <p class="font-semibold text-slate-200 mt-0.5">RoC Kanpur (Uttar Pradesh)</p>
-                  </div>
-                </div>
-                <div class="pt-2 border-t border-slate-800">
-                  <p class="text-[10px] text-slate-400 uppercase font-bold">Principal Business Activity</p>
-                  <p class="font-semibold text-slate-200 mt-0.5">Taxation, Accounting, Legal & Corporate Regulatory Advisory</p>
-                </div>
-                <div class="pt-2">
-                  <p class="text-[10px] text-slate-400 uppercase font-bold">Registered Office</p>
-                  <p class="font-semibold text-slate-200 mt-0.5 leading-snug">
-                    876/5, Shalimar Garden Extn-1, Ghaziabad, Uttar Pradesh - 201005[cite: 1]
-                  </p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-800 flex flex-col gap-2">
-                  <a href="#contact" class="w-full text-center py-2.5 px-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs transition">
-                    Consult with Corporate Director Desk
-                  </a>
-                  <a href="https://maps.google.com/?q=place_id:ChIJaWKHJFL7DDkRNpm7S8ENKXc" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 px-4 rounded-xl border border-slate-700 hover:bg-slate-800 text-slate-300 font-bold text-xs transition">
-                    Verify on Google Business & Map
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Google Reviews Section -->
-    <section id="reviews" class="py-16 bg-white border-b border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-          <div>
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold mb-2">
-              <span>⭐⭐⭐⭐⭐</span>
-              <span>4.9 / 5.0 Rated on Google</span>
-            </div>
-            <h2 class="text-3xl font-extrabold text-brand-navy tracking-tight">Verified Client Reviews</h2>
-          </div>
-
-          <div class="flex items-center gap-3">
-            <a href="https://search.google.com/local/writereview?placeid=ChIJaWKHJFL7DDkRNpm7S8ENKXc" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold shadow-xs transition">
-              ✍ Write a Review on Google
-            </a>
-            <a href="https://maps.google.com/?q=place_id:ChIJaWKHJFL7DDkRNpm7S8ENKXc" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-xs font-bold text-slate-700 transition">
-              View All Reviews
-            </a>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-            <div class="flex text-amber-400 text-sm mb-2">★★★★★</div>
-            <p class="text-xs text-slate-600 italic mb-4 leading-relaxed">
-              "Got my Private Limited Company registered and FSSAI License issued without any hassles. Transparent billing and direct expert guidance over WhatsApp throughout the process."
-            </p>
-            <div class="border-t border-slate-200 pt-3">
-              <h4 class="text-xs font-bold text-slate-900">Amit Kumar</h4>
-              <p class="text-[10px] text-slate-500">Cloud Kitchen Operator &bull; <span class="text-emerald-600 font-semibold">Google Review</span></p>
-            </div>
-          </div>
-
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-            <div class="flex text-amber-400 text-sm mb-2">★★★★★</div>
-            <p class="text-xs text-slate-600 italic mb-4 leading-relaxed">
-              "Our GST ASMT-10 scrutiny notice was replied to with zero penalty by Maraqs Commerce. They reconciled 3B and 2B input credits very accurately. Highly recommended!"
-            </p>
-            <div class="border-t border-slate-200 pt-3">
-              <h4 class="text-xs font-bold text-slate-900">Vikas Sharma</h4>
-              <p class="text-[10px] text-slate-500">Director, Manufacturing Firm &bull; <span class="text-emerald-600 font-semibold">Google Review</span></p>
-            </div>
-          </div>
-
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-            <div class="flex text-amber-400 text-sm mb-2">★★★★★</div>
-            <p class="text-xs text-slate-600 italic mb-4 leading-relaxed">
-              "Seamless Income Tax (ITR) e-filing. Everything was done digitally without visiting any office. Best tax advisory in Shalimar Garden & Ghaziabad region."
-            </p>
-            <div class="border-t border-slate-200 pt-3">
-              <h4 class="text-xs font-bold text-slate-900">Neha Mishra</h4>
-              <p class="text-[10px] text-slate-500">Senior IT Consultant &bull; <span class="text-emerald-600 font-semibold">Google Review</span></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Consultation Form -->
-    <section id="contact" class="py-16 bg-slate-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-12 gap-8 items-start">
-          <div class="lg:col-span-7 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-            <h3 class="text-lg font-bold text-slate-900 mb-1">Service Inquiry Desk</h3>
-            <p class="text-xs text-slate-500 mb-6">Receive structured quotes and documentation checklists.</p>
-
-            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-              <input type="hidden" name="access_key" value="97524341-48d1-4f0b-ae1b-c6a2f2296f73">
-              <div class="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name *</label>
-                  <input type="text" name="name" required placeholder="e.g. Rahul Sharma" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-slate-50/50">
+                  <span class="text-2xl font-extrabold font-heading text-brand-navy">5,000+</span>
+                  <p class="text-xs font-semibold text-slate-500">Corporate Filings</p>
                 </div>
                 <div>
-                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone Number *</label>
-                  <input type="tel" name="phone" required pattern="[0-9]{10}" placeholder="e.g. 9876543210" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-slate-50/50">
+                  <span class="text-2xl font-extrabold font-heading text-brand-navy">PAN India</span>
+                  <p class="text-xs font-semibold text-slate-500">Service Coverage</p>
                 </div>
-              </div>
-
-              <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Service Required *</label>
-                <select name="service" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-slate-50/50">
-                  <option value="Private Limited Company">Private Limited Company</option>
-                  <option value="GST Registration">GST Registration</option>
-                  <option value="FSSAI License">FSSAI License</option>
-                  <option value="Trademark Registration">Trademark Registration</option>
-                  <option value="Income Tax E-Filing">Income Tax E-Filing</option>
-                  <option value="Company Compliance">Company Compliance (MCA)</option>
-                </select>
-              </div>
-
-              <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Message</label>
-                <textarea name="message" rows="3" placeholder="Share specific business details or inquiries..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-slate-50/50"></textarea>
-              </div>
-
-              <button type="submit" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-sm rounded-xl shadow-md transition">
-                Submit Consultation Request
-              </button>
-            </form>
-          </div>
-
-          <div class="lg:col-span-5 bg-brand-navy text-white rounded-3xl p-7 shadow-xl space-y-6">
-            <h3 class="text-xl font-bold">Office & Contact Desk</h3>
-            <div class="space-y-4 text-sm">
-              <div>
-                <p class="text-[11px] uppercase text-slate-400 font-bold">Corporate Office</p>
-                <p class="text-sm font-semibold mt-0.5 leading-snug">
-                  876/5, Shalimar Garden Extn-1,<br />
-                  Ghaziabad, Uttar Pradesh - 201005[cite: 1]
-                </p>
-              </div>
-              <div>
-                <p class="text-[11px] uppercase text-slate-400 font-bold">WhatsApp Direct & Calling</p>
-                <p class="text-sm font-semibold mt-0.5 text-emerald-400">+91 9355476488</p>[cite: 1]
-              </div>
-              <div>
-                <p class="text-[11px] uppercase text-slate-400 font-bold">Official Email</p>
-                <p class="text-sm font-semibold mt-0.5">official.maraqs@gmail.com</p>[cite: 1]
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Verified Google Maps Location Section -->
-    <section id="location" class="py-16 bg-white border-t border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-10">
-          <span class="text-xs font-bold uppercase text-brand-600 bg-blue-50 px-3 py-1 rounded-full">
-            Visit Our Office
-          </span>
-          <h2 class="text-3xl font-extrabold text-brand-navy mt-3">Google Location & Direction</h2>
-          <p class="text-slate-600 text-sm mt-1">Maraqs Commerce Pvt Ltd &bull; 876/5, Shalimar Garden, Ghaziabad</p>[cite: 1]
-        </div>
-
-        <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-50">
-          <div class="grid lg:grid-cols-12">
-            <div class="lg:col-span-8 h-[390px] w-full">
-              <iframe 
-                title="Maraqs Commerce Pvt Ltd Google Location"
-                src="https://maps.google.com/maps?q=Maraqs+Commerce+Pvt+Ltd,+876/5,+Shalimar+Garden,+Ghaziabad&ll=28.6866076,77.3377329&z=16&output=embed" 
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-
-            <div class="lg:col-span-4 p-8 flex flex-col justify-between bg-white">
+          <!-- Official MCA Details -->
+          <div class="lg:col-span-5 bg-brand-navy text-white rounded-2xl p-7 shadow-lg">
+            <h3 class="text-lg font-bold font-heading mb-4 pb-3 border-b border-slate-800">Ministry of Corporate Affairs Profile</h3>
+            <div class="space-y-3 text-xs">
               <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-50 text-emerald-700 text-xs font-bold mb-4">
-                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Verified Google Business
-                </div>
-                <h3 class="text-lg font-extrabold text-slate-900">Maraqs Commerce Pvt Ltd</h3>
-                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                <p class="text-[10px] text-slate-400 uppercase font-bold">Company Name</p>
+                <p class="text-sm font-bold text-white mt-0.5">Maraqs Commerce Pvt Ltd</p>
+              </div>
+              <div>
+                <p class="text-[10px] text-slate-400 uppercase font-bold">Registrar of Companies</p>
+                <p class="font-semibold text-slate-200 mt-0.5">RoC Kanpur (Uttar Pradesh)</p>
+              </div>
+              <div>
+                <p class="text-[10px] text-slate-400 uppercase font-bold">Registered Office</p>
+                <p class="font-semibold text-slate-200 mt-0.5">
                   876/5, Shalimar Garden Extn-1, Ghaziabad, Uttar Pradesh - 201005[cite: 1]
                 </p>
-                <div class="mt-4 space-y-2 text-xs text-slate-700 font-medium">
-                  <p>📍 <strong>Place ID:</strong> <code class="bg-slate-100 px-1 py-0.5 rounded text-[11px]">ChIJaWKHJFL7DDkRNpm7S8ENKXc</code></p>
-                  <p>⏰ <strong>Office Hours:</strong> Mon - Sat (10:00 AM - 7:00 PM)</p>
-                  <p>📞 <strong>Advisory Desk:</strong> +91 9355476488</p>[cite: 1]
-                </div>
               </div>
-
-              <div class="mt-6 pt-4 border-t border-slate-100 flex flex-col gap-2.5">
-                <a href="https://maps.google.com/?q=place_id:ChIJaWKHJFL7DDkRNpm7S8ENKXc" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 px-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-sm transition flex items-center justify-center gap-2">
-                  <span>Get Directions on Google Maps</span>
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              <div class="pt-3">
+                <a href="#contact" class="block text-center py-2.5 px-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs transition">
+                  Contact Advisory Desk
                 </a>
               </div>
             </div>
@@ -929,236 +456,250 @@
         </div>
       </div>
     </section>
-  </main>
 
-  <!-- Corporate Footer -->
-  <footer class="bg-brand-navy text-slate-400 text-xs border-t border-slate-800 pt-14 pb-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
-        <div>
-          <span class="text-white font-extrabold text-base tracking-tight block mb-2">MARAQS COMMERCE PVT LTD</span>
-          <p class="text-slate-400 leading-relaxed">Taxation &bull; Accounting &bull; FSSAI Licensing &bull; MCA Corporate Governance.</p>
-          <p class="mt-3 text-slate-300 font-semibold">Office Address:</p>
-          <p class="text-slate-400">876/5, Shalimar Garden Extn-1, Ghaziabad, Uttar Pradesh - 201005</p>[cite: 1]
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-16 bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold mb-2">
+            <span>⭐⭐⭐⭐⭐</span>
+            <span>4.9 / 5.0 Google Rating</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold font-heading text-brand-navy">Client Feedback & Experiences</h2>
         </div>
-        <div>
-          <p class="text-slate-200 font-bold mb-3 uppercase tracking-wider">Services Matrix</p>
-          <ul class="space-y-1.5">
-            <li><a href="javascript:void(0)" onclick="selectHeadAndOpen('registrations', 2)" class="hover:text-white">FSSAI Food Licensing</a></li>
-            <li><a href="javascript:void(0)" onclick="selectHeadAndOpen('gst', 0)" class="hover:text-white">GST Registration & Filings</a></li>
-            <li><a href="javascript:void(0)" onclick="selectHeadAndOpen('tax', 0)" class="hover:text-white">Income Tax Returns (ITR)</a></li>
-            <li><a href="javascript:void(0)" onclick="selectHeadAndOpen('startup', 4)" class="hover:text-white">Pvt Ltd & LLP Incorporation</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="text-slate-200 font-bold mb-3 uppercase tracking-wider">Corporate Links</p>
-          <ul class="space-y-1.5">
-            <li><a href="#about" class="hover:text-white">About MCA Entity & 8-Year Journey</a></li>
-            <li><a href="#reviews" class="hover:text-white">Verified Reviews ⭐</a></li>
-            <li><a href="#location" class="hover:text-white">Google Map & Directions</a></li>
-            <li><a href="https://maps.google.com/?q=place_id:ChIJaWKHJFL7DDkRNpm7S8ENKXc" target="_blank" class="hover:text-white">Google Business Profile</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="text-slate-200 font-bold mb-3 uppercase tracking-wider">Direct Helpdesk</p>
-          <p class="text-white font-semibold">+91 9355476488</p>[cite: 1]
-          <p class="mt-1">official.maraqs@gmail.com</p>[cite: 1]
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <div class="flex text-amber-400 text-xs mb-2">★★★★★</div>
+            <p class="text-xs text-slate-600 italic mb-4 leading-relaxed">
+              "Company incorporation aur FSSAI license bina kisi delay ke issue ho gaya. Direct expert guidance mila WhatsApp par."
+            </p>
+            <div class="border-t border-slate-200 pt-3">
+              <h4 class="text-xs font-bold text-slate-900">Amit Kumar</h4>
+              <p class="text-[10px] text-slate-500">Food Enterprise</p>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <div class="flex text-amber-400 text-xs mb-2">★★★★★</div>
+            <p class="text-xs text-slate-600 italic mb-4 leading-relaxed">
+              "GST notice ka timely reply file kiya gaya aur input credit reconciliation accurately solve hui. Very professional team."
+            </p>
+            <div class="border-t border-slate-200 pt-3">
+              <h4 class="text-xs font-bold text-slate-900">Vikas Sharma</h4>
+              <p class="text-[10px] text-slate-500">Trading Director</p>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <div class="flex text-amber-400 text-xs mb-2">★★★★★</div>
+            <p class="text-xs text-slate-600 italic mb-4 leading-relaxed">
+              "ITR filing aur tax advisory bilkul seamless rahi. Kisi office visit ki jarurat nahi padi, sab online smoothly complete hua."
+            </p>
+            <div class="border-t border-slate-200 pt-3">
+              <h4 class="text-xs font-bold text-slate-900">Neha Mishra</h4>
+              <p class="text-[10px] text-slate-500">IT Consultant</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="pt-6 text-center text-slate-500">
-        <p>&copy; 2026 Maraqs Commerce Pvt Ltd. All statutory rights reserved.</p>[cite: 3]
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7 bg-white rounded-2xl p-7 border border-slate-200">
+            <h3 class="text-lg font-bold font-heading text-slate-900 mb-1">Book a Free Consultation</h3>
+            <p class="text-xs text-slate-500 mb-5">Fill out your details to receive quotation & document checklists.</p>
+
+            <form onsubmit="handleInquirySubmit(event)" class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name *</label>
+                  <input type="text" id="formName" required placeholder="e.g. Rahul Sharma" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm outline-none focus:border-brand-600">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone Number *</label>
+                  <input type="tel" id="formPhone" required pattern="[0-9]{10}" placeholder="10-digit mobile number" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm outline-none focus:border-brand-600">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Service Required *</label>
+                <select id="formService" required class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm outline-none focus:border-brand-600">
+                  <option value="Private Limited / LLP Setup">Private Limited / LLP Setup</option>
+                  <option value="GST Registration & Filing">GST Registration & Filing</option>
+                  <option value="FSSAI Food License">FSSAI Food License</option>
+                  <option value="Income Tax Return (ITR)">Income Tax Return (ITR)</option>
+                  <option value="Tax Notice / Legal Defense">Tax Notice / Legal Defense</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Message</label>
+                <textarea id="formMessage" rows="3" placeholder="Describe your business or queries..." class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm outline-none focus:border-brand-600"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm rounded-xl transition">
+                Send Consultation Request via WhatsApp
+              </button>
+            </form>
+          </div>
+
+          <div class="lg:col-span-5 bg-brand-navy text-white rounded-2xl p-7 shadow-lg space-y-4 text-xs">
+            <h3 class="text-base font-bold font-heading text-white">Office Helpdesk</h3>
+            <div>
+              <p class="text-slate-400 font-bold uppercase text-[10px]">Corporate Office</p>
+              <p class="font-semibold text-slate-200 mt-0.5">
+                876/5, Shalimar Garden Extn-1, Ghaziabad, Uttar Pradesh - 201005[cite: 1]
+              </p>
+            </div>
+            <div>
+              <p class="text-slate-400 font-bold uppercase text-[10px]">Calling & WhatsApp</p>
+              <p class="font-semibold text-emerald-400 text-sm mt-0.5">+91 9355476488</p>[cite: 1]
+            </div>
+            <div>
+              <p class="text-slate-400 font-bold uppercase text-[10px]">Email</p>
+              <p class="font-semibold text-slate-200 mt-0.5">official.maraqs@gmail.com</p>[cite: 1]
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-16 bg-white border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <h2 class="text-2xl font-bold font-heading text-brand-navy">Visit Our Registered Office</h2>
+          <p class="text-slate-600 text-xs mt-1">Shalimar Garden, Ghaziabad &bull; Open Mon - Sat (10 AM - 7 PM)</p>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+          <iframe 
+            title="Office Location"
+            src="https://maps.google.com/maps?q=876/5,+Shalimar+Garden,+Ghaziabad&z=15&output=embed" 
+            width="100%" 
+            height="360" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brand-navy text-slate-400 text-xs border-t border-slate-800 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+      <div>
+        <span class="text-white font-bold text-sm block">MARAQS COMMERCE PVT LTD</span>
+        <p class="text-slate-400 mt-1">876/5, Shalimar Garden Extn-1, Ghaziabad, UP - 201005</p>[cite: 1]
+      </div>
+      <div class="text-slate-500 text-[11px]">
+        &copy; 2026 Maraqs Commerce Pvt Ltd. All rights reserved.
       </div>
     </div>
   </footer>
 
-  <!-- Step 3: Drilldown Detail & Document Checklist Modal -->
-  <div id="serviceDetailModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200">
-      <div class="p-6 border-b border-slate-100 flex items-start justify-between">
+  <!-- Document Checklist Modal -->
+  <div id="serviceDetailModal" role="dialog" aria-modal="true" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-xl w-full max-h-[85vh] overflow-y-auto shadow-2xl border border-slate-200">
+      <div class="p-5 border-b border-slate-100 flex items-start justify-between">
         <div>
-          <span id="modalHeadTag" class="text-[11px] font-extrabold uppercase text-brand-600 bg-blue-50 px-2.5 py-1 rounded-md"></span>
-          <h3 id="modalTitle" class="text-2xl font-extrabold text-brand-navy mt-2"></h3>
-          <p id="modalTimeline" class="text-xs text-slate-500 font-semibold mt-1"></p>
+          <span id="modalHeadTag" class="text-[10px] font-bold uppercase text-brand-600 bg-blue-50 px-2 py-0.5 rounded"></span>
+          <h3 id="modalTitle" class="text-xl font-bold font-heading text-brand-navy mt-1"></h3>
+          <p id="modalTimeline" class="text-xs text-slate-500 font-semibold mt-0.5"></p>
         </div>
-        <button onclick="closeServiceModal()" class="text-slate-400 hover:text-slate-700 text-2xl font-bold p-1 leading-none">&times;</button>
+        <button onclick="closeServiceModal()" aria-label="Close Modal" class="text-slate-400 hover:text-slate-700 text-2xl font-bold leading-none">&times;</button>
       </div>
 
-      <div class="p-6 space-y-6 text-sm">
+      <div class="p-5 space-y-5 text-xs">
         <div>
-          <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider">Scope of Service</h4>
-          <p id="modalDesc" class="text-slate-600 mt-1 text-xs sm:text-sm leading-relaxed"></p>
+          <h4 class="font-bold uppercase text-slate-400 tracking-wider">Overview</h4>
+          <p id="modalDesc" class="text-slate-600 mt-1 leading-relaxed"></p>
         </div>
 
-        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
-          <h4 class="text-xs font-bold uppercase text-slate-800 tracking-wider flex items-center gap-2">
-            <span class="text-brand-600">📁</span> Mandatory Document Checklist
-          </h4>
-          <ul id="modalDocs" class="mt-3 space-y-2 text-xs text-slate-700"></ul>
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <h4 class="font-bold uppercase text-slate-800 tracking-wider">Mandatory Document Checklist</h4>
+          <ul id="modalDocs" class="mt-2 space-y-1.5 text-slate-700"></ul>
         </div>
 
         <div>
-          <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider">Statutory Deliverables</h4>
-          <div id="modalDeliverables" class="grid sm:grid-cols-2 gap-2 mt-2"></div>
+          <h4 class="font-bold uppercase text-slate-400 tracking-wider">Deliverables</h4>
+          <div id="modalDeliverables" class="grid sm:grid-cols-2 gap-2 mt-1.5"></div>
         </div>
       </div>
 
-      <div class="p-6 bg-slate-50 border-t border-slate-100 flex flex-col sm:flex-row items-center gap-3">
-        <a id="modalWhatsAppAction" target="_blank" rel="noopener noreferrer" class="w-full sm:w-1/2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold text-center flex items-center justify-center gap-2 transition">
-          <span>Apply via WhatsApp</span>
+      <div class="p-4 bg-slate-50 border-t border-slate-100 flex gap-2">
+        <a id="modalWhatsAppAction" target="_blank" rel="noopener noreferrer" class="w-1/2 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold text-center transition">
+          Apply on WhatsApp
         </a>
-        <button onclick="closeServiceModal()" class="w-full sm:w-1/2 py-3 px-4 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs font-bold text-center transition">
-          Close Window
+        <button onclick="closeServiceModal()" class="w-1/2 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs font-bold transition">
+          Close
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Floating Assistant Launcher -->
-  <button id="maraqsAiLauncher" class="maraqs-ai-launcher" aria-label="Open Maraqs AI Assistant" title="Ask Maraqs AI">
-    <span class="ai-dot"></span>[cite: 1]
-    <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3 1.5-4.5A7 7 0 0 1 3 13V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg>[cite: 1]
+  <!-- AI Launcher & Panel -->
+  <button id="aiLauncher" class="ai-launcher" aria-label="Open Compliance Assistant">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3 1.5-4.5A7 7 0 0 1 3 13V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg>
   </button>
 
-  <!-- Interactive AI Assistant Panel -->
-  <section id="maraqsAiPanel" class="maraqs-ai-panel" aria-label="Maraqs AI Assistant">
-    <div class="maraqs-ai-head">
-      <div class="flex items-center gap-2.5">
-        <div class="maraqs-ai-avatar">AI</div>[cite: 1]
-        <div>
-          <div class="font-extrabold text-xs">Maraqs Compliance Assistant</div>
-          <div class="text-[10px] text-blue-200">Online &bull; 24/7 Service Desk</div>
-        </div>
-      </div>
-      <button id="maraqsAiClose" class="text-white/80 hover:text-white text-xl leading-none" aria-label="Close">×</button>[cite: 1]
+  <section id="aiPanel" class="ai-panel" aria-label="Compliance Assistant Panel">
+    <div class="p-3 bg-slate-900 text-white flex items-center justify-between">
+      <span class="text-xs font-bold">Maraqs Assistant</span>
+      <button id="aiClose" class="text-white/80 hover:text-white text-lg">&times;</button>
     </div>
-    <div id="maraqsAiMessages" class="maraqs-ai-messages"></div>[cite: 1]
-    <div class="maraqs-ai-suggestions">
-      <button class="ai-suggest">About Maraqs</button>
-      <button class="ai-suggest">FSSAI License</button>
-      <button class="ai-suggest">GST Registration</button>[cite: 1]
-      <button class="ai-suggest">Office Location</button>
-      <button class="ai-suggest">Talk to Human</button>
-    </div>
-    <form id="maraqsAiForm" class="maraqs-ai-form">
-      <input id="maraqsAiInput" class="maraqs-ai-input" placeholder="Ask about our 8-year journey, FSSAI, GST..." autocomplete="off">
-      <button class="maraqs-ai-send" aria-label="Send">➤</button>[cite: 1]
+    <div id="aiMessages" class="flex-1 p-3 overflow-y-auto bg-slate-50"></div>
+    <form id="aiForm" class="p-2 border-t border-slate-200 flex gap-2 bg-white">
+      <input id="aiInput" class="flex-1 border border-slate-300 rounded-lg px-3 py-1.5 text-xs outline-none focus:border-brand-600" placeholder="Ask about GST, FSSAI, ITR...">
+      <button class="bg-brand-600 text-white px-3 py-1.5 rounded-lg text-xs font-bold">Send</button>
     </form>
   </section>
 
-  <!-- Master Interactive Database & Scripts -->
+  <!-- JavaScript -->
   <script>
     const fullPortalCatalog = {
       startup: {
         title: "Startup & Incorporation",
         services: [
-          { name: "Proprietorship", timeline: "24 - 48 Hours", desc: "Fast setup for solo business owners, consultants, and retail shops.", docs: ["Proprietor PAN & Aadhaar Card", "Electricity Bill of Business Premises", "NOC from Property Owner", "Bank Cancelled Cheque"], deliverables: ["MSME Udyam Certificate", "Current Account Resolution"] },
-          { name: "Partnership", timeline: "3 - 5 Days", desc: "Structured legal partnership firm registered under the Partnership Act.", docs: ["PAN & Aadhaar of all partners", "Partnership deed drafting on stamp paper", "Address proof of business premises"], deliverables: ["Formed Partnership Deed", "Firm PAN Card"] },
-          { name: "One Person Company", timeline: "7 - 10 Days", desc: "Single-member corporate entity with limited liability protection.", docs: ["PAN & Aadhaar of Director & Nominee", "Bank statement with current address", "Registered office electricity bill & NOC"], deliverables: ["MCA Incorporation Certificate (COI)", "MOA & AOA", "1 Class-3 DSC"] },
-          { name: "Limited Liability Partnership", timeline: "5 - 8 Days", desc: "Corporate partnership structure with limited partner liability.", docs: ["PAN & Aadhaar of minimum 2 Designated Partners", "Latest bank statements", "Registered office utility bill & NOC"], deliverables: ["LLP Certificate of Incorporation", "Form 3 LLP Agreement Filing", "PAN & TAN"] },
-          { name: "Private Limited Company", timeline: "7 - 10 Days", desc: "Gold standard structure for startups, external funding, and enterprise scale.", docs: ["PAN, Aadhaar & Photos of 2 Directors", "Voter ID / Passport / Driving License", "Bank statement (Last 2 months)", "Office electricity bill & NOC"], deliverables: ["Certificate of Incorporation (COI)", "2 Class 3 DSC tokens", "MOA & AOA", "PAN, TAN, EPFO, ESIC"] },
-          { name: "Section 8 Company", timeline: "12 - 15 Days", desc: "Non-profit corporate company for social, charitable, or education objectives.", docs: ["KYC of minimum 2 Directors", "Charitable object clause & 3-year projection", "Premises rent deed & bill"], deliverables: ["Section 8 Central License", "MCA Incorporation Certificate"] },
-          { name: "Trust Registration", timeline: "7 - 10 Days", desc: "Public/private charitable trust registered under the Sub-Registrar.", docs: ["Trust Deed on non-judicial stamp paper", "KYC of Settlor & 2 Trustees", "Office utility bill & 2 Witnesses"], deliverables: ["Registered Trust Deed", "Trust PAN Card"] },
-          { name: "Public Limited Company", timeline: "15 - 20 Days", desc: "Large public corporate entity (Min 3 Directors & 7 Shareholders).", docs: ["KYC of 3 Directors & 7 Shareholders", "DSC tokens", "Registered office documents"], deliverables: ["MCA COI", "Corporate PAN/TAN", "MOA/AOA"] },
-          { name: "Producer Company", timeline: "15 - 20 Days", desc: "Farmer Producer Organisation (FPO) for primary agricultural producers.", docs: ["KYC of 5 Directors & 10 Producer Members", "Kisan Passbook / Land proof showing agricultural activity", "Office NOC"], deliverables: ["FPO Certificate of Incorporation", "Statutory Registers"] },
-          { name: "Indian Subsidiary", timeline: "15 - 25 Days", desc: "Indian company incorporation for Foreign Parent Companies and NRIs.", docs: ["Apostilled / Consularized Certificate of Parent Entity", "Board Resolution from Foreign Company", "KYC of 1 Resident Indian Director", "Indian office proof"], deliverables: ["MCA Incorporation Certificate", "RBI FC-GPR filing readiness", "PAN/TAN"] }
+          { name: "Proprietorship", timeline: "24 - 48 Hours", desc: "Fast setup for solo business owners, retail, and independent consultants.", docs: ["Proprietor PAN & Identity Proof", "Electricity bill of business address", "NOC from property owner", "Cancelled bank cheque"], deliverables: ["MSME Udyam Certificate", "Bank Account Documentation"] },
+          { name: "Partnership Firm", timeline: "3 - 5 Days", desc: "Structured partnership under the Indian Partnership Act.", docs: ["PAN & Identity proofs of all partners", "Partnership deed on stamp paper", "Premises proof"], deliverables: ["Partnership Deed", "Firm PAN Card"] },
+          { name: "One Person Company (OPC)", timeline: "7 - 10 Days", desc: "Single-member corporate structure with limited liability.", docs: ["PAN & ID of Director & Nominee", "Bank statement", "Registered office bill & NOC"], deliverables: ["MCA Incorporation Certificate (COI)", "MOA & AOA", "Class-3 DSC"] },
+          { name: "Limited Liability Partnership (LLP)", timeline: "5 - 8 Days", desc: "Modern corporate partnership structure.", docs: ["Identity proof of min. 2 Partners", "Bank statement", "Office address proof"], deliverables: ["LLP Incorporation Certificate", "Form 3 LLP Agreement", "PAN & TAN"] },
+          { name: "Private Limited Company", timeline: "7 - 10 Days", desc: "Gold standard structure for startups seeking investments and scalability.", docs: ["PAN & Identity proofs of 2 Directors", "Bank statements (Last 2 months)", "Office electricity bill & NOC"], deliverables: ["Certificate of Incorporation", "MOA & AOA", "Class-3 DSC tokens", "PAN & TAN"] }
         ]
       },
       registrations: {
-        title: "Statutory Registrations",
+        title: "Registrations & Licenses",
         services: [
-          { name: "Startup India", timeline: "3 - 5 Days", desc: "DPIIT recognition for tax exemptions (80-IAC) and tender preferences.", docs: ["COI of Pvt Ltd / LLP", "Pitch deck / Note on product innovation", "Website / App link"], deliverables: ["DPIIT Recognition Certificate"] },
-          { name: "Trade License", timeline: "5 - 7 Days", desc: "Local municipal authorization to carry out trade operations.", docs: ["Property tax receipt", "Rent deed & NOC", "Business constitution proof"], deliverables: ["Municipal Trade License"] },
-          { name: "FSSAI Registration", timeline: "3 - 5 Days", desc: "14-digit FoSCoS basic registration for food turnover under ₹12 Lakhs.", docs: ["Applicant Passport Photo", "PAN Card & Aadhaar", "Premises electricity bill"], deliverables: ["14-Digit FSSAI Registration Certificate"] },
-          { name: "FSSAI License", timeline: "7 - 14 Days", desc: "State or Central Food License for turnover between ₹12L and ₹20Cr.", docs: ["Premises layout plan", "Equipment list & water test report", "Medical fitness proof of staff", "Rent deed & NOC"], deliverables: ["FSSAI State/Central Food License"] },
-          { name: "Halal License & Certification", timeline: "7 - 10 Days", desc: "Compliance certification for consumable food, cosmetics and export items.", docs: ["Product list & Ingredient declaration", "FSSAI license", "Manufacturing process chart"], deliverables: ["Halal Compliance Certificate"] },
-          { name: "ICEGATE Registration", timeline: "2 - 3 Days", desc: "Customs EDI portal setup for electronic filing of bill of entry.", docs: ["IEC Code", "Class 3 DSC with Encryption", "Bank authorization letter"], deliverables: ["Active ICEGATE Customs User ID"] },
-          { name: "Import Export Code", timeline: "24 - 48 Hours", desc: "10-digit DGFT registration for international cargo and service trade.", docs: ["Entity PAN Card", "Cancelled cheque / Bank certificate", "Address proof of premises"], deliverables: ["Official DGFT IEC Certificate"] },
-          { name: "ISO Registration", timeline: "3 - 5 Days", desc: "ISO 9001, 14001, 27001 standard quality certification.", docs: ["Business registration proof", "Invoices / Process documentation", "Scope of work"], deliverables: ["Accredited ISO Certificate"] },
-          { name: "PF Registration", timeline: "2 - 3 Days", desc: "EPFO establishment code for mandatory employee retirement benefit.", docs: ["Company PAN & COI", "Directors KYC", "Cancelled cheque", "First hire details"], deliverables: ["EPFO Establishment Code"] },
-          { name: "ESI Registration", timeline: "2 - 3 Days", desc: "ESIC social security medical benefits for employee salaries under ₹21,000.", docs: ["Entity PAN & Certificate", "Address proof", "Employee compensation register"], deliverables: ["17-Digit ESIC Establishment Code"] },
-          { name: "12A and 80G Registration", timeline: "15 - 25 Days", desc: "Tax exemption and donor tax rebate setup for registered NGOs.", docs: ["Trust Deed / Section 8 COI", "NGO PAN Card", "3-Year activity report & balance sheet"], deliverables: ["Form 10AC Approval Order"] },
-          { name: "Digital Signature", timeline: "15 - 30 Mins", desc: "Class 3 DSC token for MCA, GST, Income Tax and e-Tendering.", docs: ["Aadhaar linked mobile for OTP", "PAN Card", "Live video recording"], deliverables: ["Class-3 USB Crypto Token"] },
-          { name: "Udyam Registration", timeline: "24 Hours", desc: "Official government MSME certificate for bank credit and interest subvention.", docs: ["Applicant Aadhaar & PAN", "Bank account details", "Turnover & investment figures"], deliverables: ["Udyam MSME Certificate"] },
-          { name: "BIS Registration", timeline: "15 - 30 Days", desc: "Bureau of Indian Standards approval (ISI mark / CRS).", docs: ["Manufacturing license", "Lab test report from BIS certified lab", "Factory machinery details"], deliverables: ["BIS Registration Number"] }
-        ]
-      },
-      trademark: {
-        title: "Trademark & IPR",
-        services: [
-          { name: "Trademark Registration", timeline: "24 Hours for TM Application", desc: "Pan-India brand name, logo, or slogan registration under relevant Nice class.", docs: ["Brand Name & Logo design", "Applicant PAN & Aadhaar (or COI)", "MSME certificate for 50% fee rebate", "User Affidavit (if claiming prior use)"], deliverables: ["Official TM Application Number (TM symbol usage)", "Formal Examination tracking"] },
-          { name: "Trademark Objection", timeline: "2 - 4 Days", desc: "Drafting structured legal reply to examiner's objection under Section 9 or 11.", docs: ["Examination Report copy", "Evidence of commercial brand usage (invoices, marketing bills, website)"], deliverables: ["Legally drafted Form MISC-R reply uploaded to IPR portal"] },
-          { name: "Trademark Certificate", timeline: "1 - 2 Days", desc: "Procuring the final registered (R) trademark certificate after journal clearance.", docs: ["Application number", "Power of Attorney"], deliverables: ["Final R-Symbol Trademark Certificate"] },
-          { name: "Trademark Opposition", timeline: "3 - 5 Days", desc: "Filing or defending Form TM-O against 3rd party opposition.", docs: ["Opposition notice copy", "Prior usage receipts", "Rebuttal facts"], deliverables: ["Counter-Statement filing on IP India"] },
-          { name: "Trademark Hearing", timeline: "Scheduled by Registrar", desc: "Advocate appearance and legal argument before the Trademark Hearing Officer.", docs: ["Case docket", "Affidavit in support of user", "Precedent case laws"], deliverables: ["Appearance and argued order"] },
-          { name: "TM Infringement Notice", timeline: "24 - 48 Hours", desc: "Cease-and-desist legal notice to unauthorized brand copiers.", docs: ["Trademark certificate copy", "Evidence of competitor infringement"], deliverables: ["Advocate signed Cease & Desist Legal Notice"] },
-          { name: "Trademark Renewal", timeline: "2 - 3 Days", desc: "10-year validity extension of registered trademark on Form TM-R.", docs: ["Original TM Certificate", "Applicant authorization"], deliverables: ["10-Year Renewal Endorsement Order"] },
-          { name: "Logo Designing", timeline: "2 - 4 Days", desc: "Original vector graphic logo creation suited for copyright & trademark safety.", docs: ["Brand concept & color preferences"], deliverables: ["Vector files (AI, PNG, SVG, PDF) + Commercial Copyright"] },
-          { name: "Design Registration", timeline: "15 - 30 Days", desc: "Protects unique aesthetic shape, pattern or ornamentation of products.", docs: ["2D/3D product drawings from 7 different perspectives", "Statement of novelty"], deliverables: ["Patent Office Design Registration Certificate"] },
-          { name: "Copyright Registration", timeline: "30 Days waiting", desc: "Protects software source code, books, music, art and video work.", docs: ["Copies of original work", "NOC from author / creator", "Form XIV"], deliverables: ["Government Copyright Diary Number & Certificate"] },
-          { name: "Patent Registration", timeline: "Provisional in 48 Hours", desc: "Protection for unique, functional technological inventions.", docs: ["Invention specification & disclosure", "Drawings and claims draft", "Form 1 & 2"], deliverables: ["Provisional / Complete Patent Application Number"] }
+          { name: "FSSAI Registration", timeline: "3 - 5 Days", desc: "Basic 14-digit FoSCoS registration for food businesses under ₹12 Lakh turnover.", docs: ["Passport photo", "Identity Proof", "Premises utility bill"], deliverables: ["14-digit FSSAI Registration Certificate"] },
+          { name: "FSSAI State License", timeline: "7 - 12 Days", desc: "Food safety license for turnover between ₹12 Lakh and ₹20 Crore.", docs: ["Premises layout plan", "Equipment list", "Staff medical fitness", "Rent agreement & NOC"], deliverables: ["FSSAI State Food License"] },
+          { name: "Import Export Code (IEC)", timeline: "24 - 48 Hours", desc: "Mandatory DGFT code for international import & export trade.", docs: ["Entity PAN Card", "Cancelled cheque / Bank Certificate", "Address proof"], deliverables: ["Official DGFT IEC Certificate"] },
+          { name: "ISO Certification", timeline: "3 - 5 Days", desc: "ISO 9001, 14001 quality compliance for business tenders and credibility.", docs: ["Registration proof", "Invoice copies / Workflow chart"], deliverables: ["Accredited ISO Certificate"] },
+          { name: "Udyam MSME Registration", timeline: "24 Hours", desc: "Government recognition for subsidies, interest subvention, and priority lending.", docs: ["Identity Proof & PAN", "Bank account details", "Turnover summary"], deliverables: ["Official Udyam Certificate"] }
         ]
       },
       gst: {
-        title: "GST Suite",
+        title: "GST Compliance Desk",
         services: [
-          { name: "GST Registration", timeline: "3 - 7 Days", desc: "Guaranteed GSTIN procurement for traders, service providers, and online sellers.", docs: ["PAN & Aadhaar of Promoter/Directors", "Electricity Bill / Rent Agreement of Place of Business", "NOC from Landlord", "Cancelled Cheque / Bank Statement"], deliverables: ["Official GSTIN Certificate (Form REG-06)", "Login Credentials"] },
-          { name: "GST Return Filing by Accountant", timeline: "Monthly Cycle", desc: "Monthly GSTR-1 & GSTR-3B filings with 100% GSTR-2B ITC reconciliation.", docs: ["Sales Invoices Summary", "Purchase Invoices Register", "Bank statement"], deliverables: ["Filed GSTR-1 & GSTR-3B Acknowledgments", "Tax Payment Challans"] },
-          { name: "GST LUT Form", timeline: "24 Hours", desc: "Letter of Undertaking for exporting goods/services without paying IGST upfront.", docs: ["GSTIN Login details", "KYC of 2 Independent Witnesses"], deliverables: ["Approved LUT Acknowledgment (Form GST RFD-11)"] },
-          { name: "GST Notice", timeline: "2 - 4 Days", desc: "Legal reply to ASMT-10, DRC-01, or Section 61 notices for 3B vs 2A/2B ITC mismatches.", docs: ["Notice copy", "Purchase invoices", "2B Reconciliation sheet"], deliverables: ["Fact-checked Legal Reply on GST Portal"] },
-          { name: "GST Annual Return (GSTR-9)", timeline: "3 - 5 Days", desc: "Mandatory annual consolidation with audited balance sheet.", docs: ["Monthly 3B & 1 summaries", "Audited Financial Statements", "ITC comparison sheet"], deliverables: ["Filed GSTR-9 & GSTR-9C Receipts"] },
-          { name: "GST Amendment", timeline: "2 - 3 Days", desc: "Updating registered business address, trade name, or adding partners/directors.", docs: ["Proof of new address / partner addition", "Board resolution"], deliverables: ["Updated GSTIN Certificate"] },
-          { name: "Virtual Office + GSTIN", timeline: "3 - 5 Days", desc: "Commercial address with rent deed, NOC & electricity bill for GST in any state.", docs: ["Entity PAN & Identity proofs of Directors"], deliverables: ["1-Year Rent Agreement", "NOC", "Utility Bill", "GSTIN Approval Support"] }
+          { name: "GST Registration", timeline: "3 - 7 Days", desc: "New GSTIN procurement for retail, e-commerce, and service providers.", docs: ["Promoter PAN & ID", "Electricity bill of business address", "Owner NOC / Rent Deed", "Bank cancelled cheque"], deliverables: ["Official GSTIN Certificate (REG-06)", "Login Credentials"] },
+          { name: "Monthly GST Return Filing", timeline: "Monthly Cycle", desc: "Monthly GSTR-1 and GSTR-3B filings with complete 2B Input Tax Credit matching.", docs: ["Sales invoice register", "Purchase bills register", "Bank statement"], deliverables: ["Filed GSTR-1 & 3B Acknowledgments", "Tax Payment Challans"] },
+          { name: "GST LUT Form", timeline: "24 Hours", desc: "Letter of Undertaking for zero-rated export of services and goods without IGST.", docs: ["GSTIN login details", "Witness KYC"], deliverables: ["Approved LUT Acknowledgment"] },
+          { name: "GST Notice Defense (ASMT-10)", timeline: "2 - 4 Days", desc: "Legal representation for ITC mismatches (3B vs 2A/2B) or departmental notices.", docs: ["Notice copy", "Purchase invoices", "Reconciliation statement"], deliverables: ["Written Legal Reply on GST Portal"] }
         ]
       },
       tax: {
-        title: "Income Tax",
+        title: "Income Tax & ITR Desk",
         services: [
-          { name: "Income Tax E-Filing", timeline: "24 Hours", desc: "ITR-1 & ITR-2 filing for salaried staff, capital gains and rental income.", docs: ["Form 16 from Employer", "PAN & Aadhaar Card", "Annual Information Statement (AIS/TIS)", "Bank Statement"], deliverables: ["Computation of Income", "ITR-V Filing Acknowledgment"] },
-          { name: "Business ITR Filing", timeline: "2 - 3 Days", desc: "ITR-3 & ITR-4 filing under presumptive taxation (Section 44AD / 44ADA).", docs: ["Gross turnover / receipts summary", "Bank statement", "26AS / AIS", "Investment proofs"], deliverables: ["Income Computation", "Filed ITR Receipt", "Tax liability assessment"] },
-          { name: "Company ITR Filing", timeline: "5 - 7 Days", desc: "ITR-6 corporate return for Private Limited and Public Limited companies.", docs: ["Audited Financials", "Tax Audit Report (Form 3CD if applicable)", "MAT calculations"], deliverables: ["ITR-6 Filing Acknowledgment with DSC verification"] },
-          { name: "15CA - 15CB Filing", timeline: "24 - 48 Hours", desc: "CA certified remittance form for foreign payments to non-residents.", docs: ["Invoice from foreign vendor", "Agreement copy", "Bank remittance form", "PAN of remitter"], deliverables: ["CA Certified Form 15CB", "Income Tax Form 15CA Filing Receipt"] },
-          { name: "TDS Return Filing", timeline: "Quarterly Cycle", desc: "Form 24Q (Salary), 26Q (Vendor), and 27Q (Non-resident) quarterly filings.", docs: ["TDS challans", "Deductee list with PAN and payment breakup"], deliverables: ["Quarterly TDS Return Acknowledgment", "Form 16 / 16A Generation"] },
-          { name: "Income Tax Notice", timeline: "2 - 4 Days", desc: "Legal defense for defective returns (Sec 139(9)), high value transactions, or Section 148 scrutiny.", docs: ["Notice copy from IT portal", "Financial supporting proofs", "Bank statements"], deliverables: ["Detailed Legal Written Submission on e-Proceedings"] },
-          { name: "Revised ITR Return (ITR-U)", timeline: "2 - 3 Days", desc: "Updating income tax return for past 2 assessment years to declare missed income.", docs: ["Past filed ITR copy", "Omitted income summary", "Challan for additional tax payment"], deliverables: ["Updated ITR-U Acknowledgment"] }
-        ]
-      },
-      mca: {
-        title: "MCA Governance",
-        services: [
-          { name: "Company Compliance", timeline: "Annual Cycle", desc: "Statutory annual filing on MCA V3 including Form AOC-4 (Financials) and MGT-7 (Annual Return).", docs: ["Audited Balance Sheet & P&L", "Directors Report", "Notice of AGM", "DSC of Director"], deliverables: ["Approved AOC-4 & MGT-7 SRN Receipts"] },
-          { name: "LLP Compliance", timeline: "Annual Cycle", desc: "Mandatory filing of Form 11 (Annual Return) and Form 8 (Statement of Accounts).", docs: ["LLP Accounts statement", "Partner contribution breakup", "Class 3 DSC"], deliverables: ["Form 11 & Form 8 MCA Receipts"] },
-          { name: "DIN eKYC Filing", timeline: "Same Day", desc: "Annual web/form DIR-3 KYC compliance for all active DIN holders.", docs: ["Director PAN & Aadhaar", "Personal Mobile & Email for OTP", "Passport (if available)"], deliverables: ["DIR-3 KYC SRN Acknowledgment"] },
-          { name: "Director Change", timeline: "3 - 5 Days", desc: "Appointment of new director (DIR-12) or addition of independent director.", docs: ["Consent letter (DIR-2)", "Intimation letter (DIR-8)", "Board Resolution", "New Director DIN"], deliverables: ["Form DIR-12 Approval Receipt"] },
-          { name: "ADT-1 Filing", timeline: "2 - 3 Days", desc: "Intimation of statutory auditor appointment for 5 consecutive years.", docs: ["Auditor Consent letter & Eligibility certificate", "AGM Resolution"], deliverables: ["Form ADT-1 MCA SRN"] },
-          { name: "MOA / AOA Amendment", timeline: "5 - 7 Days", desc: "Altering the main object clause or management bylaws of the company.", docs: ["EGM Special Resolution", "Modified MOA/AOA draft", "Form MGT-14"], deliverables: ["Approved MGT-14 Order"] },
-          { name: "Authorized Capital Increase", timeline: "3 - 5 Days", desc: "Increasing capital threshold via Form SH-7 and paying RoC stamp duty.", docs: ["Board & EGM resolution", "Altered MOA Capital Clause"], deliverables: ["Form SH-7 Approval Letter"] },
-          { name: "Demat of Shares", timeline: "10 - 15 Days", desc: "Mandatory dematerialization of shares for private companies via ISIN creation.", docs: ["Tripartite agreement with NSDL/CDSL and RTA", "Audited balance sheet"], deliverables: ["Allotted Corporate ISIN Number"] },
-          { name: "Winding Up - Company", timeline: "60 - 90 Days", desc: "Voluntary strike off of inactive company under Section 248 via Form STK-2.", docs: ["NIL Asset Statement certified by CA", "Affidavit (STK-4)", "Indemnity Bond (STK-3)", "Bank closure letter"], deliverables: ["MCA Gazette Notification of Dissolution"] },
-          { name: "Commencement (INC-20A)", timeline: "24 - 48 Hours", desc: "Mandatory declaration filed within 180 days of incorporation before starting operations.", docs: ["Bank statement showing subscription money deposited by directors"], deliverables: ["Form INC-20A Approval Letter"] }
-        ]
-      },
-      compliance: {
-        title: "Compliance Retainers",
-        services: [
-          { name: "FDI Filing", timeline: "15 - 20 Days", desc: "Foreign Direct Investment intimation on RBI FIRMS portal (Form FC-GPR).", docs: ["Foreign Inward Remittance Certificate (FIRC)", "KYC report from remitting bank", "Valuation Certificate from Merchant Banker"], deliverables: ["RBI Approved FC-GPR Acknowledgment"] },
-          { name: "ODI Filing", timeline: "15 - 20 Days", desc: "Overseas Direct Investment compliance for Indian entities investing abroad.", docs: ["Form FC", "Valuation report", "Board resolution", "Statutory auditor certificate"], deliverables: ["RBI UIN Allotment"] },
-          { name: "FLA Return Filing", timeline: "Before July 15th", desc: "Annual Foreign Liabilities and Assets return for companies with FDI or ODI.", docs: ["Audited Financial Balance sheet", "Foreign equity shareholding details"], deliverables: ["RBI FLA Portal Filed Acknowledgment"] },
-          { name: "FSSAI Renewal", timeline: "3 - 5 Days", desc: "Extending food license validity for 1 to 5 years before expiration.", docs: ["Existing FSSAI License copy", "Updated food category list"], deliverables: ["Renewed FSSAI License Certificate"] },
-          { name: "Business Plan", timeline: "5 - 7 Days", desc: "Comprehensive investor-ready financial model, valuation and pitch deck.", docs: ["Business overview note", "Historical revenue or draft projections"], deliverables: ["Executive Pitch Deck & 5-Year Dynamic Financial Excel Model"] },
-          { name: "HR & Payroll", timeline: "Monthly Cycle", desc: "End-to-end salary processing, payslips, leave tracking and tax calculations.", docs: ["Monthly attendance register", "New employee joining details"], deliverables: ["Monthly Salary Register", "Bank Transfer Sheet", "Automated Employee Payslips"] },
-          { name: "PF Return Filing", timeline: "Monthly Cycle", desc: "Monthly Electronic Challan cum Return (ECR) submission for PF deduction.", docs: ["Salary statement showing basic pay and employee PF deduction"], deliverables: ["ECR Filed Challan & Payment Receipt"] },
-          { name: "ESI Return Filing", timeline: "Monthly Cycle", desc: "Monthly contribution filing for employee health insurance.", docs: ["Employee wage register with gross earnings"], deliverables: ["ESIC Monthly Challan Receipt"] },
-          { name: "Bookkeeping", timeline: "Monthly Retainer", desc: "Cloud ledger accounting on Tally, Zoho Books or QuickBooks with monthly P&L reporting.", docs: ["Bank statements (PDF/Excel)", "Sales invoices", "Vendor purchase bills"], deliverables: ["Monthly Balance Sheet", "P&L Statement", "Debtor/Creditor Aging Reports"] }
-        ]
-      },
-      international: {
-        title: "International",
-        services: [
-          { name: "UAE Company Registration", timeline: "5 - 7 Days", desc: "Business setup in Dubai Mainland or Freezones (IFZA, Meydan, DMCC).", docs: ["Passport copy of Shareholders", "Passport-size photograph", "3 proposed company names"], deliverables: ["UAE Trade License", "MOA", "Establishment Card", "Resident Visa Support"] },
-          { name: "USA Company Registration", timeline: "3 - 5 Days", desc: "US LLC or C-Corp formation in Delaware, Wyoming, or Texas.", docs: ["Passport of owners", "Business activity description"], deliverables: ["Certificate of Formation", "Federal EIN Tax ID", "Operating Agreement", "US Bank Account Assistance"] },
-          { name: "Singapore Business Setup", timeline: "3 - 5 Days", desc: "Pte Ltd incorporation with ACRA for Asian market operations.", docs: ["Passport & residential address proof", "Nominee director details (can be provided)"], deliverables: ["ACRA Business Profile", "Company Constitution", "Corporate Bank Account Setup"] },
-          { name: "UK Company Registration", timeline: "24 - 48 Hours", desc: "Private Limited company formation with UK Companies House.", docs: ["Passport of Director", "Proof of address (Utility bill / bank statement)"], deliverables: ["Certificate of Incorporation", "Articles of Association", "UK Registered Office Address"] },
-          { name: "USA Trademark Registration", timeline: "24 - 48 Hours for Filing", desc: "Federal brand protection with the United States Patent and Trademark Office (USPTO).", docs: ["Logo / Brand name", "Proof of commerce in the USA (Website, sales invoice to US customer)"], deliverables: ["Official USPTO Serial Number", "Federal Brand Protection"] }
+          { name: "Individual ITR Filing", timeline: "24 Hours", desc: "Accurate filing of ITR-1 & ITR-2 for salaried employees, capital gains, and rental income.", docs: ["Form 16", "PAN & ID Proof", "AIS / TIS Statement", "Bank Statement"], deliverables: ["Computation of Income", "Filed ITR-V Acknowledgment"] },
+          { name: "Business ITR Filing", timeline: "2 - 3 Days", desc: "ITR-3 & ITR-4 under presumptive taxation (Sec 44AD / 44ADA).", docs: ["Gross receipts / Turnover statement", "Bank statement", "AIS Report"], deliverables: ["Tax Computation Sheet", "Filed ITR Receipt"] },
+          { name: "Company Corporate ITR", timeline: "5 - 7 Days", desc: "ITR-6 corporate filing for Private Limited and Limited entities.", docs: ["Audited Financials", "Tax Audit Report (3CD if applicable)", "DSC of Director"], deliverables: ["Filed ITR-6 Acknowledgment"] },
+          { name: "Income Tax Notice Reply", timeline: "2 - 4 Days", desc: "Legal reply to scrutiny notices, high-value transaction queries, or Section 148 notices.", docs: ["Notice copy", "Financial proofs & bank records"], deliverables: ["Legal Written Submission on Income Tax Portal"] }
         ]
       }
     };
@@ -1171,8 +712,8 @@
         const item = fullPortalCatalog[key];
         const isActive = key === selectedHeadKey;
         return `
-          <button onclick="changeHeadCategory('${key}')" class="px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition ${
-            isActive ? 'bg-brand-600 text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+          <button onclick="changeHeadCategory('${key}')" class="px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition ${
+            isActive ? 'bg-brand-600 text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
           }">
             ${item.title}
           </button>
@@ -1189,22 +730,22 @@
     function renderCatalogGrid() {
       const current = fullPortalCatalog[selectedHeadKey];
       document.getElementById('currentHeadLabel').textContent = current.title;
-      document.getElementById('serviceCountBadge').textContent = `${current.services.length} Services Available`;
+      document.getElementById('serviceCountBadge').textContent = `${current.services.length} Services`;
 
       const grid = document.getElementById('catalogGrid');
       grid.innerHTML = current.services.map((s, idx) => `
-        <div onclick="openServiceDetail('${selectedHeadKey}', ${idx})" class="group cursor-pointer bg-slate-50 hover:bg-white p-5 rounded-2xl border border-slate-200 hover:border-brand-600 hover:shadow-lg transition-all flex flex-col justify-between">
+        <div onclick="openServiceDetail('${selectedHeadKey}', ${idx})" class="cursor-pointer bg-slate-50 hover:bg-white p-5 rounded-2xl border border-slate-200 hover:border-brand-600 hover:shadow-md transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-2">
-              <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-blue-50 text-brand-600">Click for Docs</span>
+              <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-blue-50 text-brand-600">Click for Docs</span>
               <span class="text-[11px] font-semibold text-slate-400">${s.timeline}</span>
             </div>
-            <h4 class="text-sm font-extrabold text-slate-900 group-hover:text-brand-600 transition mb-1">${s.name}</h4>
-            <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed">${s.desc}</p>
+            <h4 class="text-sm font-bold text-slate-900 mb-1">${s.name}</h4>
+            <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">${s.desc}</p>
           </div>
-          <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between text-xs font-bold text-brand-600">
-            <span>View Required Documents</span>
-            <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs font-bold text-brand-600">
+            <span>View Required Docs</span>
+            <span>&rarr;</span>
           </div>
         </div>
       `).join('');
@@ -1214,113 +755,124 @@
       selectedHeadKey = headKey;
       initCatalogTabs();
       document.getElementById('services-catalog').scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => openServiceDetail(headKey, serviceIdx), 400);
+      setTimeout(() => openServiceDetail(headKey, serviceIdx), 350);
     }
 
     function openServiceDetail(headKey, serviceIndex) {
       const service = fullPortalCatalog[headKey].services[serviceIndex];
       document.getElementById('modalHeadTag').textContent = fullPortalCatalog[headKey].title;
       document.getElementById('modalTitle').textContent = service.name;
-      document.getElementById('modalTimeline').textContent = `⏱ Estimated Processing Time: ${service.timeline}`;
+      document.getElementById('modalTimeline').textContent = `Processing Time: ${service.timeline}`;
       document.getElementById('modalDesc').textContent = service.desc;
 
       document.getElementById('modalDocs').innerHTML = service.docs.map(doc => `
-        <li class="flex items-start gap-2">
+        <li class="flex items-center gap-2">
           <span class="text-emerald-600 font-bold">✓</span>
           <span>${doc}</span>
         </li>
       `).join('');
 
       document.getElementById('modalDeliverables').innerHTML = service.deliverables.map(item => `
-        <div class="p-2.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold flex items-center gap-1.5">
+        <div class="p-2 rounded-lg bg-slate-100 text-slate-700 font-semibold flex items-center gap-1.5">
           <span class="w-1.5 h-1.5 rounded-full bg-brand-600"></span>
           <span>${item}</span>
         </div>
       `).join('');
 
-      document.getElementById('modalWhatsAppAction').href = `https://wa.me/919355476488?text=${encodeURIComponent(`Hi Maraqs Commerce, I want to apply for ${service.name}. Please verify my documents.`)}`;
+      document.getElementById('modalWhatsAppAction').href = `https://wa.me/919355476488?text=${encodeURIComponent('Hello Maraqs Commerce, I want to apply for ' + service.name)}`;
 
       const modal = document.getElementById('serviceDetailModal');
       modal.classList.remove('hidden');
       modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
     }
 
     function closeServiceModal() {
       const modal = document.getElementById('serviceDetailModal');
       modal.classList.add('hidden');
       modal.classList.remove('flex');
+      document.body.style.overflow = '';
     }
 
-    initCatalogTabs();
+    // Modal background / Escape key listener
+    document.getElementById('serviceDetailModal').addEventListener('click', (e) => {
+      if (e.target.id === 'serviceDetailModal') closeServiceModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeServiceModal();
+    });
 
-    // AI Engine
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileDrawer');
+      drawer.classList.toggle('hidden');
+    }
+    document.getElementById('mobileMenuBtn').addEventListener('click', toggleMobileMenu);
+
+    // Form submission via WhatsApp
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('formName').value.trim();
+      const phone = document.getElementById('formPhone').value.trim();
+      const service = document.getElementById('formService').value;
+      const msg = document.getElementById('formMessage').value.trim();
+
+      const text = `Hello Maraqs Commerce,\n\nName: ${name}\nPhone: ${phone}\nService: ${service}\nMessage: ${msg || 'Consultation inquiry'}`;
+      window.open(`https://wa.me/919355476488?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    // Interactive Assistant Setup
     (function(){
-      const launcher = document.getElementById('maraqsAiLauncher');
-      const panel = document.getElementById('maraqsAiPanel');
-      const close = document.getElementById('maraqsAiClose');
-      const messages = document.getElementById('maraqsAiMessages');
-      const form = document.getElementById('maraqsAiForm');
-      const input = document.getElementById('maraqsAiInput');
+      const launcher = document.getElementById('aiLauncher');
+      const panel = document.getElementById('aiPanel');
+      const closeBtn = document.getElementById('aiClose');
+      const messages = document.getElementById('aiMessages');
+      const form = document.getElementById('aiForm');
+      const input = document.getElementById('aiInput');
 
-      if (!launcher || !panel) return;
-
-      const addMsg = (text, who = 'bot') => {
-        const el = document.createElement('div');
-        el.className = 'ai-msg ' + (who === 'user' ? 'ai-user' : 'ai-bot');
-        el.textContent = text;
-        messages.appendChild(el);
+      const addMsg = (text, type = 'bot') => {
+        const div = document.createElement('div');
+        div.className = `ai-msg ${type === 'user' ? 'ai-user' : 'ai-bot'}`;
+        div.textContent = text;
+        messages.appendChild(div);
         messages.scrollTop = messages.scrollHeight;
       };
 
       launcher.addEventListener('click', () => {
-        panel.classList.add('open');
+        panel.classList.toggle('open');
         if (!messages.dataset.started) {
-          messages.dataset.started = '1';
-          addMsg('Hello! I am your Maraqs Compliance Assistant. 👋\n\nAsk about our 8-year company journey, MCA registration, FSSAI, GST, or click any service to view required documents!');
+          messages.dataset.started = 'true';
+          addMsg('Hello! I am your Maraqs Assistant. Ask about GST, FSSAI, Company Incorporation, or our office location.');
         }
       });
-      close.addEventListener('click', () => panel.classList.remove('open'));
 
-      const handleQuery = (query) => {
-        const clean = query.trim();
-        if (!clean) return;
-        addMsg(clean, 'user');
-        const q = clean.toLowerCase();
-
-        let reply = `Thank you for inquiring about "${clean}". Maraqs Commerce Pvt Ltd handles over 100+ statutory services across MCA, FSSAI, GST, Trademark and Income Tax.`;
-        let action = null;
-
-        if (/about|journey|year|mca|heritage|history/.test(q)) {
-          reply = '🏛 Maraqs Commerce Pvt Ltd is an active corporate entity registered under RoC Kanpur, operating for over 8 years. We have handled 5,000+ statutory filings across GST, MCA, and FSSAI with 100% compliance!';
-        } else if (/expert|call|whatsapp|human/.test(q)) {
-          reply = 'Connecting you directly to our WhatsApp helpdesk (+91 9355476488)...';
-          action = 'whatsapp';
-        } else if (/location|map|address/.test(q)) {
-          reply = '📍 Maraqs Commerce Pvt Ltd:\n876/5, Shalimar Garden Extn-1, Ghaziabad, U.P - 201005.\nPlace ID: ChIJaWKHJFL7DDkRNpm7S8ENKXc';
-        } else if (/review|rating/.test(q)) {
-          reply = '⭐ We hold a 4.9/5 star Google rating from verified corporate and retail clients.';
-        } else if (/fssai|food/.test(q)) {
-          reply = 'FSSAI Basic is for turnover under ₹12L (3-5 days), while State License covers ₹12L-₹20Cr (7-12 days). Which one do you need?';
-        }
-
-        setTimeout(() => {
-          addMsg(reply, 'bot');
-          if (action === 'whatsapp') {
-            window.open(`https://wa.me/919355476488?text=${encodeURIComponent('Hello Maraqs Commerce, I need assistance with: ' + clean)}`, '_blank');
-          }
-        }, 250);
-      };
+      closeBtn.addEventListener('click', () => panel.classList.remove('open'));
 
       form.addEventListener('submit', (e) => {
         e.preventDefault();
-        handleQuery(input.value);
+        const q = input.value.trim();
+        if (!q) return;
+        addMsg(q, 'user');
         input.value = '';
-      });
 
-      document.querySelectorAll('.ai-suggest').forEach(btn => {
-        btn.addEventListener('click', () => handleQuery(btn.textContent));
+        const lower = q.toLowerCase();
+        let answer = 'Thank you for your question. Maraqs Commerce Pvt Ltd handles corporate tax, MCA filings, and licensing. Feel free to contact our WhatsApp desk at +91 9355476488 for direct consultation.';
+
+        if (/gst|itc|asmt/.test(lower)) {
+          answer = 'We provide GST registration, monthly GSTR-1 & 3B filings, and notice defense against 3B vs 2B ITC mismatches.';
+        } else if (/fssai|food/.test(lower)) {
+          answer = 'FSSAI Basic registration is for turnover under ₹12L (3-5 days), and State License covers ₹12L to ₹20Cr.';
+        } else if (/company|pvt|llp|incorporation/.test(lower)) {
+          answer = 'We incorporate Private Limited companies and LLPs with DSC, DIN, MOA/AOA and MCA certification within 7-10 days.';
+        } else if (/location|office|address/.test(lower)) {
+          answer = 'Our registered office is at 876/5, Shalimar Garden Extn-1, Ghaziabad, UP - 201005.';
+        }
+
+        setTimeout(() => addMsg(answer, 'bot'), 200);
       });
     })();
+
+    initCatalogTabs();
   </script>
 </body>
 </html>
