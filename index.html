@@ -110,6 +110,64 @@
       visibility: visible;
       transform: translateY(0);
     }
+
+    /* Portal-style navigation upgrade */
+    .portal-nav-shell{background:#f6f7f9;border-bottom:1px solid #e5e7eb;box-shadow:0 1px 0 rgba(15,23,42,.03)}
+    .portal-nav-shell .desktop-main-nav{gap:0}
+    .portal-nav-item{position:relative;white-space:nowrap}
+    .portal-nav-trigger{display:inline-flex;align-items:center;gap:.38rem;padding:1.28rem .78rem;font-size:14px;font-weight:600;color:#475569;transition:.2s}
+    .portal-nav-trigger:hover{color:#1d4ed8;background:rgba(255,255,255,.72)}
+    .portal-nav-item:hover .portal-nav-trigger{color:#1d4ed8}
+    .portal-nav-dropdown{min-width:260px;background:#fff;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 22px 50px rgba(15,23,42,.14);padding:14px}
+    .portal-nav-dropdown.wide{min-width:540px}
+    .portal-nav-dropdown a{display:block;padding:10px 12px;border-radius:10px;color:#334155;font-size:13px;font-weight:600}
+    .portal-nav-dropdown a:hover{background:#f1f5f9;color:#1d4ed8}
+    .portal-nav-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#2563eb;padding:5px 10px 8px}
+    .mobile-accordion summary{list-style:none;cursor:pointer}
+    .mobile-accordion summary::-webkit-details-marker{display:none}
+    .mobile-accordion[open] summary .plus{transform:rotate(45deg);color:#2563eb}
+    .mobile-accordion .plus{transition:.2s}
+    @media (max-width: 1399px){.portal-nav-trigger{padding:1.1rem .6rem;font-size:13px}}
+
+
+    /* ===== Premium Maraqs UI upgrade ===== */
+    .portal-nav-shell{background:rgba(255,255,255,.96)!important;backdrop-filter:blur(18px);box-shadow:0 10px 30px rgba(15,23,42,.06)!important}
+    .portal-nav-trigger{padding:1.15rem .72rem!important;color:#334155!important;font-weight:650!important;letter-spacing:-.01em}
+    .portal-nav-trigger:hover{color:#1d4ed8!important;background:#f8fafc!important}
+    .portal-nav-item:after{content:'';position:absolute;left:.7rem;right:.7rem;bottom:0;height:2px;background:#2563eb;transform:scaleX(0);transition:.2s;border-radius:2px}
+    .portal-nav-item:hover:after{transform:scaleX(1)}
+    .portal-nav-dropdown{border-radius:20px!important;border-color:#e2e8f0!important;box-shadow:0 24px 60px rgba(15,23,42,.16)!important;padding:12px!important}
+    .portal-nav-dropdown a{padding:11px 13px!important;border-radius:12px!important}
+    .portal-nav-dropdown a:hover{background:linear-gradient(90deg,#eff6ff,#f8fafc)!important}
+    #home{background:radial-gradient(circle at 15% 18%,rgba(37,99,235,.12),transparent 30%),radial-gradient(circle at 88% 30%,rgba(16,185,129,.08),transparent 26%),linear-gradient(180deg,#f8fbff 0%,#fff 58%,#f8fafc 100%)!important}
+    #home:before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(148,163,184,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.08) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 78%);pointer-events:none}
+    #home .max-w-7xl{position:relative}
+    .maraqs-trust-card{background:rgba(255,255,255,.82);backdrop-filter:blur(10px);border:1px solid rgba(226,232,240,.9);box-shadow:0 12px 32px rgba(15,23,42,.05)}
+    .quick-service-strip{border:1px solid #e2e8f0;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);box-shadow:0 20px 50px rgba(15,23,42,.08)}
+    .quick-service-chip{transition:.2s;border:1px solid #e2e8f0;background:#fff}
+    .quick-service-chip:hover{transform:translateY(-2px);border-color:#93c5fd;box-shadow:0 12px 25px rgba(37,99,235,.12);color:#1d4ed8}
+
+    /* Maraqs AI Assistant */
+    .maraqs-ai-launcher{position:fixed;right:22px;bottom:22px;z-index:1000;width:62px;height:62px;border-radius:20px;border:0;cursor:pointer;color:#fff;background:linear-gradient(135deg,#2563eb,#1d4ed8 55%,#0f766e);box-shadow:0 18px 45px rgba(37,99,235,.35);display:flex;align-items:center;justify-content:center;transition:.25s}
+    .maraqs-ai-launcher:hover{transform:translateY(-3px) scale(1.03)}
+    .maraqs-ai-launcher .ai-dot{position:absolute;right:1px;top:1px;width:14px;height:14px;background:#34d399;border:3px solid #fff;border-radius:999px}
+    .maraqs-ai-panel{position:fixed;right:22px;bottom:96px;z-index:1001;width:min(390px,calc(100vw - 28px));height:min(610px,calc(100vh - 120px));background:#fff;border:1px solid #dbe4ef;border-radius:24px;box-shadow:0 30px 80px rgba(15,23,42,.25);overflow:hidden;display:none;flex-direction:column}
+    .maraqs-ai-panel.open{display:flex;animation:aiIn .22s ease-out}
+    @keyframes aiIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+    .maraqs-ai-head{padding:16px 18px;background:linear-gradient(135deg,#071426,#123a63);color:#fff;display:flex;align-items:center;justify-content:space-between}
+    .maraqs-ai-avatar{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,#60a5fa,#34d399);display:grid;place-items:center;font-weight:900;box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
+    .maraqs-ai-messages{flex:1;overflow:auto;padding:16px;background:linear-gradient(180deg,#f8fafc,#fff)}
+    .ai-msg{max-width:86%;padding:11px 13px;border-radius:16px;margin-bottom:10px;font-size:13px;line-height:1.55;white-space:pre-wrap}
+    .ai-bot{background:#fff;border:1px solid #e2e8f0;color:#334155;border-bottom-left-radius:5px;box-shadow:0 4px 12px rgba(15,23,42,.04)}
+    .ai-user{background:#2563eb;color:#fff;margin-left:auto;border-bottom-right-radius:5px}
+    .maraqs-ai-suggestions{padding:0 14px 10px;display:flex;gap:7px;overflow:auto;background:#fff}
+    .ai-suggest{white-space:nowrap;border:1px solid #dbeafe;background:#eff6ff;color:#1d4ed8;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:700;cursor:pointer}
+    .maraqs-ai-form{padding:12px;border-top:1px solid #e2e8f0;display:flex;gap:8px;background:#fff}
+    .maraqs-ai-input{flex:1;border:1px solid #cbd5e1;border-radius:14px;padding:11px 12px;font-size:13px;outline:none}
+    .maraqs-ai-input:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+    .maraqs-ai-send{width:44px;border:0;border-radius:14px;background:#2563eb;color:#fff;font-weight:800;cursor:pointer}
+    @media(max-width:640px){.maraqs-ai-launcher{right:15px;bottom:15px}.maraqs-ai-panel{right:14px;bottom:88px;border-radius:20px;height:min(590px,calc(100vh - 108px))}}
+
   </style>
 </head>
 
@@ -139,7 +197,7 @@
           <svg class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
           <span>official.maraqs@gmail.com</span>
         </a>
-        <a href="https://wa.me/918595255099?text=Hello%20Maraqs%20Commerce%2C%20I%20need%20assistance%20with%20tax%20and%20business%20registration." target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1 transition">
+        <a href="https://wa.me/919355476488?text=Hello%20Maraqs%20Commerce%2C%20I%20need%20assistance%20with%20tax%20and%20business%20registration." target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1 transition">
           <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.539 1.796.819 2.791.82 3.18 0 5.767-2.587 5.768-5.766.001-3.18-2.586-5.766-5.768-5.766zm9.969 5.768c0 5.523-4.478 10-10 10-1.74 0-3.37-.449-4.801-1.233l-5.199 1.363 1.391-5.083c-.88-1.488-1.391-3.23-1.391-5.047 0-5.523 4.477-10 10-10 5.522 0 10 4.477 10 10z"/></svg>
           Quick WhatsApp Desk
         </a>
@@ -148,7 +206,7 @@
   </div>
 
   <!-- Main Corporate Sticky Header with Mega Menus -->
-  <header class="sticky top-0 z-50 glass-header border-b border-slate-200/90 transition-all duration-200">
+  <header class="portal-nav-shell sticky top-0 z-50 transition-all duration-200">
     <div class="max-w-[1600px] mx-auto px-4 sm:px-5 lg:px-6">
       <div class="flex items-center justify-between h-[72px]">
         
@@ -167,221 +225,82 @@
           </div>
         </a>
 
-        <!-- Desktop Multi-Tier Mega Navigation -->
+        <!-- Portal-style Desktop Navigation -->
         <nav class="desktop-main-nav hidden xl:flex items-center text-[14px] font-medium text-slate-700">
-          
-          <!-- 1. Startup & Registrations Mega Menu -->
-          <div class="mega-parent main-nav-link relative py-5 px-3 cursor-pointer">
-            <button class="inline-flex items-center gap-1 hover:text-brand-600 transition">
-              <span>Startup & Reg</span>
-              <svg class="w-3.5 h-3.5 text-slate-400 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-
-            <div class="mega-dropdown absolute top-full left-0 -ml-20 w-[680px] bg-white rounded-2xl shadow-2xl border border-slate-200/80 p-6 z-50">
-              <div class="grid grid-cols-2 gap-6">
-                <div>
-                  <span class="text-[11px] font-extrabold uppercase tracking-wider text-brand-600 block mb-3 pb-1 border-b border-slate-100">
-                    Entity Incorporation (MCA)
-                  </span>
-                  <div class="space-y-3">
-                    <a href="#services-matrix" onclick="switchCategory('startup'); prefillService('Private Limited Company Registration')" class="group flex items-start gap-2.5 p-2 rounded-lg hover:bg-slate-50 transition">
-                      <div class="w-8 h-8 rounded-lg bg-blue-50 text-brand-600 flex items-center justify-center font-bold text-xs shrink-0 group-hover:bg-brand-600 group-hover:text-white transition">PL</div>
-                      <div>
-                        <div class="text-xs font-bold text-slate-800 group-hover:text-brand-600 flex items-center gap-1.5">
-                          Private Limited Company
-                          <span class="text-[9px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.2 rounded">Fastrack</span>
-                        </div>
-                        <p class="text-[11px] text-slate-500">SPICe+ MCA filing, DIN, MOA/AOA & PAN</p>
-                      </div>
-                    </a>
-
-                    <a href="#services-matrix" onclick="switchCategory('startup'); prefillService('LLP Registration')" class="group flex items-start gap-2.5 p-2 rounded-lg hover:bg-slate-50 transition">
-                      <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-xs shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition">LLP</div>
-                      <div>
-                        <div class="text-xs font-bold text-slate-800 group-hover:text-brand-600">Limited Liability Partnership</div>
-                        <p class="text-[11px] text-slate-500">FiLLiP filing, custom agreement drafting</p>
-                      </div>
-                    </a>
-
-                    <a href="#services-matrix" onclick="switchCategory('startup'); prefillService('One Person Company (OPC)')" class="group flex items-start gap-2.5 p-2 rounded-lg hover:bg-slate-50 transition">
-                      <div class="w-8 h-8 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center font-bold text-xs shrink-0 group-hover:bg-teal-600 group-hover:text-white transition">OPC</div>
-                      <div>
-                        <div class="text-xs font-bold text-slate-800 group-hover:text-brand-600">One Person Company</div>
-                        <p class="text-[11px] text-slate-500">Solo corporate liability protection</p>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-
-                <div>
-                  <span class="text-[11px] font-extrabold uppercase tracking-wider text-brand-600 block mb-3 pb-1 border-b border-slate-100">
-                    Firm & MSME Registrations
-                  </span>
-                  <div class="space-y-3">
-                    <a href="#services-matrix" onclick="switchCategory('startup'); prefillService('Sole Proprietorship Setup')" class="group flex items-start gap-2.5 p-2 rounded-lg hover:bg-slate-50 transition">
-                      <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-xs shrink-0 group-hover:bg-amber-600 group-hover:text-white transition">SP</div>
-                      <div>
-                        <div class="text-xs font-bold text-slate-800 group-hover:text-brand-600">Sole Proprietorship Firm</div>
-                        <p class="text-[11px] text-slate-500">Udyam MSME, Shop Act & Current A/c</p>
-                      </div>
-                    </a>
-
-                    <a href="#services-matrix" onclick="switchCategory('startup'); prefillService('Partnership Firm Deed Drafting')" class="group flex items-start gap-2.5 p-2 rounded-lg hover:bg-slate-50 transition">
-                      <div class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center font-bold text-xs shrink-0 group-hover:bg-rose-600 group-hover:text-white transition">PF</div>
-                      <div>
-                        <div class="text-xs font-bold text-slate-800 group-hover:text-brand-600">Partnership Firm & ROF</div>
-                        <p class="text-[11px] text-slate-500">Notarized deed & PAN allotment</p>
-                      </div>
-                    </a>
-
-                    <a href="#services-matrix" onclick="switchCategory('startup'); prefillService('Startup India DPIIT Recognition')" class="group flex items-start gap-2.5 p-2 rounded-lg hover:bg-slate-50 transition">
-                      <div class="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center font-bold text-xs shrink-0 group-hover:bg-purple-600 group-hover:text-white transition">DPI</div>
-                      <div>
-                        <div class="text-xs font-bold text-slate-800 group-hover:text-brand-600">Startup India (DPIIT)</div>
-                        <p class="text-[11px] text-slate-500">Tax holiday & angel tax exemptions</p>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
+          <div class="mega-parent portal-nav-item">
+            <button class="portal-nav-trigger"><span>Startup</span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
+            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50">
+              <div class="portal-nav-label">Start Your Business</div>
+              <a href="service.html?service=Private%20Limited%20Company%20Registration">Private Limited Company</a>
+              <a href="service.html?service=LLP%20Registration">LLP Registration</a>
+              <a href="service.html?service=One%20Person%20Company%20(OPC)">One Person Company (OPC)</a>
+              <a href="service.html?service=Sole%20Proprietorship%20Setup">Sole Proprietorship</a>
+              <a href="service.html?service=Partnership%20Firm%20Registration">Partnership Firm</a>
             </div>
           </div>
-
-          <!-- 2. GST Services Mega Menu -->
-          <div class="mega-parent main-nav-link relative py-5 px-3 cursor-pointer">
-            <button class="inline-flex items-center gap-1 hover:text-brand-600 transition">
-              <span>GST Suite</span>
-              <svg class="w-3.5 h-3.5 text-slate-400 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-
-            <div class="mega-dropdown absolute top-full left-0 -ml-16 w-[640px] bg-white rounded-2xl shadow-2xl border border-slate-200/80 p-6 z-50">
-              <div class="grid grid-cols-2 gap-6">
-                <div>
-                  <span class="text-[11px] font-extrabold uppercase tracking-wider text-brand-600 block mb-3 pb-1 border-b border-slate-100">
-                    Registration & Amendments
-                  </span>
-                  <div class="space-y-2.5">
-                    <a href="#services-matrix" onclick="switchCategory('gst'); prefillService('New GST Registration')" class="block p-2 rounded-lg hover:bg-slate-50">
-                      <p class="text-xs font-bold text-slate-800 hover:text-brand-600">New GST Registration</p>
-                      <p class="text-[11px] text-slate-500">Turnaround within 3 to 7 working days</p>
-                    </a>
-                    <a href="#services-matrix" onclick="switchCategory('gst'); prefillService('GST Amendment (Core/Non-Core)')" class="block p-2 rounded-lg hover:bg-slate-50">
-                      <p class="text-xs font-bold text-slate-800 hover:text-brand-600">GST Amendments</p>
-                      <p class="text-[11px] text-slate-500">Change address, partners, or authorized signatory</p>
-                    </a>
-                    <a href="#services-matrix" onclick="switchCategory('gst'); prefillService('GST LUT Filing for Exports')" class="block p-2 rounded-lg hover:bg-slate-50">
-                      <p class="text-xs font-bold text-slate-800 hover:text-brand-600">GST LUT (Letter of Undertaking)</p>
-                      <p class="text-[11px] text-slate-500">Zero-rated export supply without IGST payment</p>
-                    </a>
-                  </div>
-                </div>
-
-                <div>
-                  <span class="text-[11px] font-extrabold uppercase tracking-wider text-brand-600 block mb-3 pb-1 border-b border-slate-100">
-                    Periodic Filings & Reconciliations
-                  </span>
-                  <div class="space-y-2.5">
-                    <a href="#services-matrix" onclick="switchCategory('gst'); prefillService('Monthly GSTR-1 and GSTR-3B Retainer')" class="block p-2 rounded-lg hover:bg-slate-50">
-                      <div class="text-xs font-bold text-slate-800 hover:text-brand-600 flex items-center justify-between">
-                        Monthly GSTR-1 & 3B Retainer
-                        <span class="text-[9px] bg-blue-100 text-brand-700 px-1.5 py-0.5 rounded font-bold">Popular</span>
-                      </div>
-                      <p class="text-[11px] text-slate-500">Includes 2B vs Purchase ITC reconciliation</p>
-                    </a>
-                    <a href="#services-matrix" onclick="switchCategory('gst'); prefillService('Annual Return GSTR-9 and GSTR-9C')" class="block p-2 rounded-lg hover:bg-slate-50">
-                      <p class="text-xs font-bold text-slate-800 hover:text-brand-600">Annual Return GSTR-9 & 9C</p>
-                      <p class="text-[11px] text-slate-500">Comprehensive annual reconciliation & audit</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
+          <div class="mega-parent portal-nav-item">
+            <button class="portal-nav-trigger"><span>Registrations</span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
+            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50">
+              <div class="portal-nav-label">Business Registrations</div>
+              <a href="service.html?service=Startup%20India%20DPIIT%20Recognition">Startup India (DPIIT)</a>
+              <a href="service.html?service=Udyam%20MSME%20Registration">Udyam / MSME Registration</a>
+              <a href="service.html?service=Trademark%20Registration">Trademark Registration</a>
+              <a href="service.html?service=Class%203%20Digital%20Signature">Digital Signature (DSC)</a>
             </div>
           </div>
-
-          <!-- 3. Income Tax & TDS Mega Menu -->
-          <div class="mega-parent main-nav-link relative py-5 px-3 cursor-pointer">
-            <button class="inline-flex items-center gap-1 hover:text-brand-600 transition">
-              <span>Income Tax & TDS</span>
-              <svg class="w-3.5 h-3.5 text-slate-400 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-
-            <div class="mega-dropdown absolute top-full left-0 -ml-16 w-[620px] bg-white rounded-2xl shadow-2xl border border-slate-200/80 p-6 z-50">
-              <div class="grid grid-cols-2 gap-6">
-                <div>
-                  <span class="text-[11px] font-extrabold uppercase tracking-wider text-brand-600 block mb-3 pb-1 border-b border-slate-100">
-                    ITR Filing Portfolios
-                  </span>
-                  <div class="space-y-2.5">
-                    <a href="#services-matrix" onclick="switchCategory('tax'); prefillService('Salaried Individual ITR-1')" class="block p-2 rounded-lg hover:bg-slate-50">
-                      <p class="text-xs font-bold text-slate-800 hover:text-brand-600">Salaried Employees (ITR-1)</p>
-                      <p class="text-[11px] text-slate-500">Form 16 + AIS + deductions</p>
-                    </a>
-                    <a href="#services-matrix" onclick="switchCategory('tax'); prefillService('Presumptive Business 44AD/44ADA ITR-4')" class="block p-2 rounded-lg hover:bg-slate-50">
-                      <p class="text-xs font-bold text-slate-800 hover:text-brand-600">Freelancers & Business (ITR-4)</p>
-                      <p class="text-[11px] text-slate-500">Presumptive profit calculation</p>
-                    </a>
-                    <a href="#services-matrix" onclick="switchCategory('tax'); prefillService('Corporate Income Tax ITR-6')" class="block p-2 rounded-lg hover:bg-slate-50">
-                      <p class="text-xs font-bold text-slate-800 hover:text-brand-600">Corporate Companies (ITR-6)</p>
-                      <p class="text-[11px] text-slate-500">Audited financial return with Form 3CD</p>
-                    </a>
-                  </div>
-                </div>
-
-                <div>
-                  <span class="text-[11px] font-extrabold uppercase tracking-wider text-brand-600 block mb-3 pb-1 border-b border-slate-100">
-                    TDS & Advance Tax
-                  </span>
-                  <div class="space-y-2.5">
-                    <a href="#services-matrix" onclick="switchCategory('tax'); prefillService('Quarterly TDS Return Filing')" class="block p-2 rounded-lg hover:bg-slate-50">
-                      <p class="text-xs font-bold text-slate-800 hover:text-brand-600">Quarterly TDS (Form 24Q, 26Q)</p>
-                      <p class="text-[11px] text-slate-500">Salary & vendor contractor payments</p>
-                    </a>
-                    <a href="#services-matrix" onclick="switchCategory('tax'); prefillService('Form 16 / 16A Issuance')" class="block p-2 rounded-lg hover:bg-slate-50">
-                      <p class="text-xs font-bold text-slate-800 hover:text-brand-600">Form 16 & 16A Generation</p>
-                      <p class="text-[11px] text-slate-500">TRACES portal signed certificates</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
+          <div class="mega-parent portal-nav-item">
+            <button class="portal-nav-trigger"><span>GST</span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
+            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50">
+              <div class="portal-nav-label">GST Services</div>
+              <a href="service.html?service=New%20GST%20Registration">GST Registration</a>
+              <a href="service.html?service=Monthly%20GST%20Return%20Filing">GST Return Filing</a>
+              <a href="service.html?service=GST%20Amendment">GST Amendment</a>
+              <a href="service.html?service=GST%20Cancellation">GST Cancellation</a>
+              <a href="service.html?service=GST%20Notice%20%2F%20Scrutiny%20Reply">GST Notice Reply</a>
+              <a href="service.html?service=GST%20LUT%20Filing">LUT Filing</a>
             </div>
           </div>
-
-          <!-- 4. Notice & Scrutiny Defense Mega Menu -->
-          <div class="mega-parent main-nav-link relative py-5 px-3 cursor-pointer">
-            <button class="inline-flex items-center gap-1 hover:text-brand-600 transition">
-              <span>Notices & Defense</span>
-              <span class="bg-rose-100 text-rose-700 text-[10px] px-1.5 py-0.5 rounded-full font-bold">Urgent</span>
-              <svg class="w-3.5 h-3.5 text-slate-400 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-
-            <div class="mega-dropdown absolute top-full left-0 -ml-28 w-[580px] bg-white rounded-2xl shadow-2xl border border-slate-200/80 p-6 z-50">
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-rose-600 block mb-3 pb-1 border-b border-slate-100">
-                Statutory Notice Drafting & Representation
-              </span>
-              <div class="grid grid-cols-2 gap-4">
-                <a href="#services-matrix" onclick="switchCategory('notice'); prefillService('GST Notice Reply (ASMT-10 / DRC-01)')" class="p-2.5 rounded-xl border border-slate-100 hover:border-rose-300 hover:bg-rose-50/40 transition">
-                  <p class="text-xs font-bold text-slate-900">GST Scrutiny (ASMT-10)</p>
-                  <p class="text-[11px] text-slate-500 mt-0.5">3B vs 2B mismatch replies</p>
-                </a>
-                <a href="#services-matrix" onclick="switchCategory('notice'); prefillService('DRC-01 Show Cause Notice Reply')" class="p-2.5 rounded-xl border border-slate-100 hover:border-rose-300 hover:bg-rose-50/40 transition">
-                  <p class="text-xs font-bold text-slate-900">DRC-01 / SCN Assessment</p>
-                  <p class="text-[11px] text-slate-500 mt-0.5">Defending tax demands and penalties</p>
-                </a>
-              </div>
+          <div class="mega-parent portal-nav-item">
+            <button class="portal-nav-trigger"><span>Income Tax</span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
+            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50">
+              <div class="portal-nav-label">Income Tax Services</div>
+              <a href="service.html?service=Salaried%20Individual%20ITR-1">ITR Filing</a>
+              <a href="service.html?service=Presumptive%20Business%2044AD%2F44ADA%20ITR-4">Business / Professional ITR</a>
+              <a href="service.html?service=Corporate%20Income%20Tax%20ITR-6">Company ITR</a>
+              <a href="service.html?service=Income%20Tax%20Notice%20Reply">Income Tax Notice</a>
+              <a href="service.html?service=Tax%20Planning">Tax Planning</a>
             </div>
           </div>
-
-          <a href="#estimator" class="main-nav-link py-7 px-3 hover:text-brand-600 transition flex items-center gap-1">
-            <span>Estimator</span>
-            <span class="bg-blue-100 text-brand-700 text-[9px] px-1.5 py-0.5 rounded font-bold">Calculator</span>
-          </a>
-          <a href="#why-us" class="main-nav-link py-7 px-3 hover:text-brand-600 transition">Why Us</a>
-          <a href="#contact" class="main-nav-link py-7 px-3 hover:text-brand-600 transition">Contact</a>
+          <div class="mega-parent portal-nav-item">
+            <button class="portal-nav-trigger"><span>MCA</span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
+            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50">
+              <div class="portal-nav-label">Company Compliance</div>
+              <a href="service.html?service=MCA%20Annual%20Filing">MCA Annual Filing</a>
+              <a href="service.html?service=Director%20Change">Director Change</a>
+              <a href="service.html?service=Company%20Name%20Change">Company Name Change</a>
+              <a href="service.html?service=Share%20Transfer">Share Transfer</a>
+              <a href="service.html?service=Company%20Closure">Company Closure</a>
+            </div>
+          </div>
+          <div class="mega-parent portal-nav-item">
+            <button class="portal-nav-trigger"><span>Compliance</span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg></button>
+            <div class="mega-dropdown portal-nav-dropdown absolute top-full left-0 z-50">
+              <div class="portal-nav-label">Ongoing Compliance</div>
+              <a href="service.html?service=Accounting%20%26%20Bookkeeping%20Retainer">Accounting &amp; Bookkeeping</a>
+              <a href="service.html?service=Quarterly%20TDS%20Return%20Filing">TDS Return Filing</a>
+              <a href="service.html?service=GST%20Annual%20Return">GST Annual Return</a>
+              <a href="service.html?service=Compliance%20Retainer">Compliance Retainer</a>
+            </div>
+          </div>
+          <a href="#contact" class="portal-nav-trigger">Consultation</a>
+          <a href="#why-us" class="portal-nav-trigger">Global</a>
+          <a href="#contact" class="portal-nav-trigger">Refer <span class="text-base">🎁</span></a>
+          <a href="#contact" class="portal-nav-trigger">We're Hiring! <span class="text-base">🎉</span></a>
         </nav>
 
         <!-- Right Header Action CTAs -->
         <div class="hidden sm:flex items-center space-x-3 shrink-0">
-          <a href="https://wa.me/918595255099?text=Hi%20Maraqs%20Commerce%2C%20I%20want%20to%20consult%20regarding%20business%20compliance" 
+          <a href="https://wa.me/919355476488?text=Hi%20Maraqs%20Commerce%2C%20I%20want%20to%20consult%20regarding%20business%20compliance" 
              target="_blank" 
              rel="noopener noreferrer" 
              class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition">
@@ -405,25 +324,19 @@
       </div>
     </div>
 
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobileDrawerMenu" class="hidden xl:hidden bg-white border-b border-slate-200 px-5 pt-3 pb-6 max-h-[85vh] overflow-y-auto space-y-3">
-      <div class="border-b border-slate-100 pb-2">
-        <a href="#services-matrix" onclick="switchCategory('startup'); closeMobileDrawer();" class="block py-2 text-sm font-bold text-slate-800">Startup & Entity Registration</a>
-        <a href="#services-matrix" onclick="switchCategory('gst'); closeMobileDrawer();" class="block py-2 text-sm font-bold text-slate-800">GST Suite & Filings</a>
-        <a href="#services-matrix" onclick="switchCategory('tax'); closeMobileDrawer();" class="block py-2 text-sm font-bold text-slate-800">Income Tax & TDS</a>
-        <a href="#estimator" onclick="closeMobileDrawer()" class="block py-2 text-sm font-bold text-slate-800">Compliance Estimator</a>
-        <a href="#why-us" onclick="closeMobileDrawer()" class="block py-2 text-sm font-bold text-slate-800">Why Maraqs Commerce</a>
-        <a href="#contact" onclick="closeMobileDrawer()" class="block py-2 text-sm font-bold text-slate-800">Contact Desk</a>
-      </div>
-
-      <div class="pt-2 flex flex-col gap-2">
-        <a href="#contact" onclick="closeMobileDrawer();" class="w-full py-3 text-center rounded-xl bg-brand-600 text-white font-bold text-xs shadow-md">
-          Book Free Consultation
-        </a>
-        <a href="https://wa.me/918595255099" target="_blank" class="w-full text-center py-2.5 rounded-xl border border-emerald-400 bg-emerald-50 text-emerald-700 font-bold text-xs">
-          Direct WhatsApp Chat
-        </a>
-      </div>
+    <!-- Mobile Portal Navigation with Accordion -->
+    <div id="mobileDrawerMenu" class="hidden xl:hidden bg-white border-b border-slate-200 px-5 py-4 max-h-[85vh] overflow-y-auto space-y-2">
+      <details class="mobile-accordion border-b border-slate-100 py-2"><summary class="flex items-center justify-between py-2 text-sm font-bold text-slate-800">Startup <span class="plus text-xl">+</span></summary><div class="pl-3 pb-2 space-y-1"><a href="service.html?service=Private%20Limited%20Company%20Registration" class="block py-2 text-sm text-slate-600">Private Limited Company</a><a href="service.html?service=LLP%20Registration" class="block py-2 text-sm text-slate-600">LLP Registration</a><a href="service.html?service=Sole%20Proprietorship%20Setup" class="block py-2 text-sm text-slate-600">Sole Proprietorship</a></div></details>
+      <details class="mobile-accordion border-b border-slate-100 py-2"><summary class="flex items-center justify-between py-2 text-sm font-bold text-slate-800">Registrations <span class="plus text-xl">+</span></summary><div class="pl-3 pb-2"><a href="service.html?service=Udyam%20MSME%20Registration" class="block py-2 text-sm text-slate-600">Udyam / MSME</a><a href="service.html?service=Trademark%20Registration" class="block py-2 text-sm text-slate-600">Trademark</a></div></details>
+      <details class="mobile-accordion border-b border-slate-100 py-2"><summary class="flex items-center justify-between py-2 text-sm font-bold text-slate-800">GST <span class="plus text-xl">+</span></summary><div class="pl-3 pb-2"><a href="service.html?service=New%20GST%20Registration" class="block py-2 text-sm text-slate-600">GST Registration</a><a href="service.html?service=Monthly%20GST%20Return%20Filing" class="block py-2 text-sm text-slate-600">GST Return Filing</a><a href="service.html?service=GST%20Notice%20%2F%20Scrutiny%20Reply" class="block py-2 text-sm text-slate-600">GST Notice Reply</a></div></details>
+      <details class="mobile-accordion border-b border-slate-100 py-2"><summary class="flex items-center justify-between py-2 text-sm font-bold text-slate-800">Income Tax <span class="plus text-xl">+</span></summary><div class="pl-3 pb-2"><a href="service.html?service=Salaried%20Individual%20ITR-1" class="block py-2 text-sm text-slate-600">ITR Filing</a><a href="service.html?service=Presumptive%20Business%2044AD%2F44ADA%20ITR-4" class="block py-2 text-sm text-slate-600">Business ITR</a></div></details>
+      <details class="mobile-accordion border-b border-slate-100 py-2"><summary class="flex items-center justify-between py-2 text-sm font-bold text-slate-800">MCA <span class="plus text-xl">+</span></summary><div class="pl-3 pb-2"><a href="service.html?service=MCA%20Annual%20Filing" class="block py-2 text-sm text-slate-600">Annual Filing</a><a href="service.html?service=Director%20Change" class="block py-2 text-sm text-slate-600">Director Change</a></div></details>
+      <details class="mobile-accordion border-b border-slate-100 py-2"><summary class="flex items-center justify-between py-2 text-sm font-bold text-slate-800">Compliance <span class="plus text-xl">+</span></summary><div class="pl-3 pb-2"><a href="service.html?service=Accounting%20%26%20Bookkeeping%20Retainer" class="block py-2 text-sm text-slate-600">Accounting</a><a href="service.html?service=Quarterly%20TDS%20Return%20Filing" class="block py-2 text-sm text-slate-600">TDS Filing</a></div></details>
+      <a href="#contact" onclick="closeMobileDrawer()" class="block py-3 border-b border-slate-100 text-sm font-bold text-slate-800">Consultation</a>
+      <a href="#why-us" onclick="closeMobileDrawer()" class="block py-3 border-b border-slate-100 text-sm font-bold text-slate-800">Global</a>
+      <a href="#contact" onclick="closeMobileDrawer()" class="block py-3 border-b border-slate-100 text-sm font-bold text-slate-800">Refer 🎁</a>
+      <a href="#contact" onclick="closeMobileDrawer()" class="block py-3 text-sm font-bold text-slate-800">We're Hiring! 🎉</a>
+      <div class="pt-3 grid grid-cols-2 gap-3"><a href="https://wa.me/919355476488" target="_blank" class="py-3 text-center rounded-xl border border-emerald-300 bg-emerald-50 text-emerald-700 font-bold text-xs">WhatsApp</a><a href="#contact" onclick="closeMobileDrawer()" class="py-3 text-center rounded-xl bg-brand-600 text-white font-bold text-xs">Book Consultation</a></div>
     </div>
   </header>
 
@@ -458,27 +371,27 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
               </a>
 
-              <a href="https://wa.me/918595255099?text=Hi%20Maraqs%20Commerce%2C%20I%20want%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm border border-slate-300 shadow-sm transition">
+              <a href="https://wa.me/919355476488?text=Hi%20Maraqs%20Commerce%2C%20I%20want%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm border border-slate-300 shadow-sm transition">
                 <svg class="w-4 h-4 text-emerald-600 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.539 1.796.819 2.791.82 3.18 0 5.767-2.587 5.768-5.766.001-3.18-2.586-5.766-5.768-5.766zm9.969 5.768c0 5.523-4.478 10-10 10-1.74 0-3.37-.449-4.801-1.233l-5.199 1.363 1.391-5.083c-.88-1.488-1.391-3.23-1.391-5.047 0-5.523 4.477-10 10-10 5.522 0 10 4.477 10 10z"/></svg>
-                <span>Chat on WhatsApp (+91 8595255099)</span>
+                <span>Chat on WhatsApp (+91 9355476488)</span>
               </a>
             </div>
 
             <!-- Trust Badges -->
             <div class="pt-6 border-t border-slate-200 grid grid-cols-2 sm:grid-cols-4 gap-4 text-left">
-              <div class="p-3 bg-white/80 rounded-xl border border-slate-200/80 shadow-xs">
+              <div class="p-3 maraqs-trust-card rounded-xl">
                 <span class="text-2xl font-extrabold text-brand-navy">100%</span>
                 <p class="text-[11px] text-slate-500 font-medium">On-Time Filing Guarantee</p>
               </div>
-              <div class="p-3 bg-white/80 rounded-xl border border-slate-200/80 shadow-xs">
+              <div class="p-3 maraqs-trust-card rounded-xl">
                 <span class="text-2xl font-extrabold text-brand-navy">Zero</span>
                 <p class="text-[11px] text-slate-500 font-medium">Hidden Billing Charges</p>
               </div>
-              <div class="p-3 bg-white/80 rounded-xl border border-slate-200/80 shadow-xs">
+              <div class="p-3 maraqs-trust-card rounded-xl">
                 <span class="text-2xl font-extrabold text-brand-navy">1-on-1</span>
                 <p class="text-[11px] text-slate-500 font-medium">Dedicated Tax Associate</p>
               </div>
-              <div class="p-3 bg-white/80 rounded-xl border border-slate-200/80 shadow-xs">
+              <div class="p-3 maraqs-trust-card rounded-xl">
                 <span class="text-2xl font-extrabold text-brand-navy">PAN-India</span>
                 <p class="text-[11px] text-slate-500 font-medium">100% Digital Document Flow</p>
               </div>
@@ -539,6 +452,22 @@
         </div>
       </div>
     </section>
+
+
+    <!-- Quick Service Discovery -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 md:-mt-12 relative z-10">
+      <div class="quick-service-strip rounded-3xl p-4 sm:p-5">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-4 justify-between">
+          <div><p class="text-xs font-extrabold uppercase tracking-[.14em] text-brand-600">Popular services</p><p class="text-sm font-bold text-slate-800 mt-1">Start faster with our most requested services</p></div>
+          <div class="flex flex-wrap gap-2">
+            <a class="quick-service-chip px-4 py-2.5 rounded-xl text-xs font-bold text-slate-700" href="service.html?service=New%20GST%20Registration">GST Registration →</a>
+            <a class="quick-service-chip px-4 py-2.5 rounded-xl text-xs font-bold text-slate-700" href="service.html?service=Salaried%20Individual%20ITR-1">ITR Filing →</a>
+            <a class="quick-service-chip px-4 py-2.5 rounded-xl text-xs font-bold text-slate-700" href="service.html?service=Private%20Limited%20Company%20Registration">Private Limited →</a>
+            <a class="quick-service-chip px-4 py-2.5 rounded-xl text-xs font-bold text-slate-700" href="service.html?service=Accounting%20%26%20Bookkeeping%20Retainer">Accounting →</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Services Section -->
     <section id="services-matrix" class="py-20 bg-white border-y border-slate-200">
@@ -757,7 +686,7 @@
                   <div>
                     <p class="text-xs uppercase text-slate-400 font-bold">WhatsApp Direct & Call</p>
                     <p class="text-sm font-semibold mt-0.5">
-                      <a href="https://wa.me/918595255099" target="_blank" class="hover:text-emerald-400">+91 8595255099</a>
+                      <a href="https://wa.me/919355476488" target="_blank" class="hover:text-emerald-400">+91 9355476488</a>
                     </p>
                   </div>
                 </div>
@@ -820,7 +749,7 @@
         </div>
         <div>
           <p class="text-slate-200 font-bold mb-3 uppercase tracking-wider">Direct Reach</p>
-          <p>+91 8595255099 / +91 9355476488</p>
+          <p>+91 9355476488 / +91 9355476488</p>
           <p class="mt-1">official.maraqs@gmail.com</p>
         </div>
       </div>
@@ -832,7 +761,7 @@
 
   <!-- Floating WhatsApp Action -->
   <aside class="fixed bottom-6 right-6 z-50">
-    <a href="https://wa.me/918595255099?text=Hello%20Maraqs%20Commerce%2C%20I%20would%20like%20to%20consult%20an%20expert" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-3 rounded-full shadow-2xl transition-transform transform hover:scale-105">
+    <a href="https://wa.me/919355476488?text=Hello%20Maraqs%20Commerce%2C%20I%20would%20like%20to%20consult%20an%20expert" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-3 rounded-full shadow-2xl transition-transform transform hover:scale-105">
       <span class="w-2.5 h-2.5 rounded-full bg-white animate-pulse"></span>
       <span class="text-xs font-bold hidden sm:inline">WhatsApp Expert</span>
       <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.539 1.796.819 2.791.82 3.18 0 5.767-2.587 5.768-5.766.001-3.18-2.586-5.766-5.768-5.766zm9.969 5.768c0 5.523-4.478 10-10 10-1.74 0-3.37-.449-4.801-1.233l-5.199 1.363 1.391-5.083c-.88-1.488-1.391-3.23-1.391-5.047 0-5.523 4.477-10 10-10 5.522 0 10 4.477 10 10z"/></svg>
@@ -1066,19 +995,60 @@
           const name = formData.get('name');
           const service = formData.get('service');
           setTimeout(() => {
-            window.open(`https://wa.me/918595255099?text=${encodeURIComponent(`Hi Maraqs Commerce, I just submitted an inquiry on your website for ${service} (Name: ${name}).`)}`, '_blank');
+            window.open(`https://wa.me/919355476488?text=${encodeURIComponent(`Hi Maraqs Commerce, I just submitted an inquiry on your website for ${service} (Name: ${name}).`)}`, '_blank');
           }, 1200);
         } else {
-          alert('Something went wrong. Please reach out to us directly on WhatsApp or Call: +91 8595255099');
+          alert('Something went wrong. Please reach out to us directly on WhatsApp or Call: +91 9355476488');
           submitBtn.disabled = false;
           submitBtn.textContent = 'Submit Consultation Request';
         }
       } catch (err) {
-        alert('Network error. Please call +91 8595255099 or message on WhatsApp.');
+        alert('Network error. Please call +91 9355476488 or message on WhatsApp.');
         submitBtn.disabled = false;
         submitBtn.textContent = 'Submit Consultation Request';
       }
     }
+  // Maraqs AI Assistant (smart website assistant + WhatsApp handoff)
+  (function(){
+    const launcher=document.getElementById('maraqsAiLauncher'), panel=document.getElementById('maraqsAiPanel'), close=document.getElementById('maraqsAiClose'), messages=document.getElementById('maraqsAiMessages'), form=document.getElementById('maraqsAiForm'), input=document.getElementById('maraqsAiInput');
+    if(!launcher||!panel) return;
+    const add=(text,who='bot')=>{const el=document.createElement('div');el.className='ai-msg '+(who==='user'?'ai-user':'ai-bot');el.textContent=text;messages.appendChild(el);messages.scrollTop=messages.scrollHeight;};
+    const open=()=>{panel.classList.add('open'); if(!messages.dataset.started){messages.dataset.started='1';add('Hi! I’m Maraqs AI. 👋\nI can help you find the right service for GST, Income Tax, Company Registration, MCA, Accounting and Compliance. What do you need help with?');} setTimeout(()=>input.focus(),120);};
+    launcher.addEventListener('click',open); close.addEventListener('click',()=>panel.classList.remove('open'));
+    const reply=q=>{const t=q.toLowerCase();
+      if(/expert|human|call|contact|whatsapp|talk/.test(t)) return 'Sure. Our expert desk is available on +91 9355476488. I can also open WhatsApp for you now.';
+      if(/gst.*reg|registration.*gst/.test(t)) return 'For GST Registration, Maraqs can guide you through eligibility, documents, application preparation and filing. Typical processing can take around 3–7 working days depending on verification. Want to start the GST Registration service?';
+      if(/gst|gstr|3b|gstr-1|2b|itc/.test(t)) return 'We can help with GST Registration, GSTR-1, GSTR-3B, ITC/2B reconciliation, amendments, cancellation, LUT and notice replies. Tell me which GST requirement you have.';
+      if(/itr|income tax|tax return|44ad|44ada|salar/.test(t)) return 'We assist with salaried ITR, business/professional ITR, presumptive taxation and corporate tax returns. Share whether you are salaried, a business owner, professional or company.';
+      if(/private|pvt|company|llp|opc|startup|incorporation/.test(t)) return 'For starting a business, we can assist with Private Limited Company, LLP, OPC, proprietorship, partnership and startup registrations. Which business structure are you considering?';
+      if(/mca|director|annual|share|name change|closure/.test(t)) return 'MCA services include annual filing, director changes, company name changes, share transfer and closure support. Tell me the specific company compliance requirement.';
+      if(/account|bookkeep|tds|payroll/.test(t)) return 'We provide accounting & bookkeeping support and TDS return assistance. You can share your business type and approximate monthly transaction volume for the right service flow.';
+      if(/price|fee|cost|charges/.test(t)) return 'Service fees depend on the exact service and document complexity. I can help identify the service first, then you can request a consultation for an exact quote.';
+      return 'I can help you find the right Maraqs Commerce service. Try asking about GST Registration, ITR Filing, Private Limited Company, LLP, MCA compliance, TDS or Accounting. For case-specific advice, our expert can assist you directly.';
+    };
+    const handle=q=>{q=q.trim();if(!q)return;add(q,'user');const r=reply(q);setTimeout(()=>{add(r);if(/expert|human|call|contact|whatsapp|talk/.test(q.toLowerCase())){setTimeout(()=>{window.open('https://wa.me/919355476488?text='+encodeURIComponent('Hi Maraqs Commerce, I need assistance with: '+q),'_blank');},500)}},280)};
+    form.addEventListener('submit',e=>{e.preventDefault();handle(input.value);input.value='';});
+    document.querySelectorAll('.ai-suggest').forEach(b=>b.addEventListener('click',()=>handle(b.textContent)));
+  })();
+
   </script>
+
+  <!-- Maraqs AI Assistant -->
+  <button id="maraqsAiLauncher" class="maraqs-ai-launcher" aria-label="Open Maraqs AI Assistant" title="Ask Maraqs AI">
+    <span class="ai-dot"></span>
+    <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3 1.5-4.5A7 7 0 0 1 3 13V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg>
+  </button>
+  <section id="maraqsAiPanel" class="maraqs-ai-panel" aria-label="Maraqs AI Assistant">
+    <div class="maraqs-ai-head">
+      <div class="flex items-center gap-3"><div class="maraqs-ai-avatar">AI</div><div><div class="font-extrabold text-sm">Maraqs AI Assistant</div><div class="text-[10px] text-blue-200">Online • Instant service guidance</div></div></div>
+      <button id="maraqsAiClose" class="text-white/80 hover:text-white text-xl leading-none" aria-label="Close">×</button>
+    </div>
+    <div id="maraqsAiMessages" class="maraqs-ai-messages"></div>
+    <div class="maraqs-ai-suggestions">
+      <button class="ai-suggest">GST Registration</button><button class="ai-suggest">ITR Filing</button><button class="ai-suggest">Company Registration</button><button class="ai-suggest">Talk to Expert</button>
+    </div>
+    <form id="maraqsAiForm" class="maraqs-ai-form"><input id="maraqsAiInput" class="maraqs-ai-input" placeholder="Ask about GST, ITR, MCA, company registration..." autocomplete="off"><button class="maraqs-ai-send" aria-label="Send">➤</button></form>
+  </section>
+
 </body>
 </html>

@@ -1,11 +1,67 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Service Details | Maraqs Commerce</title><script src="https://cdn.tailwindcss.com"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><script>tailwind.config={theme:{extend:{fontFamily:{sans:['Plus Jakarta Sans','sans-serif']},colors:{brand:{600:'#2563eb',700:'#1d4ed8',navy:'#090d16'}}}}}</script></head>
-<body class="bg-slate-50 text-slate-800 font-sans"><div class="bg-brand-navy text-slate-300 text-xs py-2.5"><div class="max-w-7xl mx-auto px-4 flex justify-between"><span>Tax • Accounting • Business Registration • Compliance</span><span>+91 8595255099</span></div></div>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Service Details | Maraqs Commerce</title><script src="https://cdn.tailwindcss.com"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><script>tailwind.config={theme:{extend:{fontFamily:{sans:['Plus Jakarta Sans','sans-serif']},colors:{brand:{600:'#2563eb',700:'#1d4ed8',navy:'#090d16'}}}}}</script><style>
+/* ===== Premium Maraqs UI upgrade ===== */
+.portal-nav-shell{background:rgba(255,255,255,.96)!important;backdrop-filter:blur(18px);box-shadow:0 10px 30px rgba(15,23,42,.06)!important}
+.portal-nav-trigger{padding:1.15rem .72rem!important;color:#334155!important;font-weight:650!important;letter-spacing:-.01em}
+.portal-nav-trigger:hover{color:#1d4ed8!important;background:#f8fafc!important}
+.portal-nav-item:after{content:'';position:absolute;left:.7rem;right:.7rem;bottom:0;height:2px;background:#2563eb;transform:scaleX(0);transition:.2s;border-radius:2px}
+.portal-nav-item:hover:after{transform:scaleX(1)}
+.portal-nav-dropdown{border-radius:20px!important;border-color:#e2e8f0!important;box-shadow:0 24px 60px rgba(15,23,42,.16)!important;padding:12px!important}
+.portal-nav-dropdown a{padding:11px 13px!important;border-radius:12px!important}
+.portal-nav-dropdown a:hover{background:linear-gradient(90deg,#eff6ff,#f8fafc)!important}
+#home{background:radial-gradient(circle at 15% 18%,rgba(37,99,235,.12),transparent 30%),radial-gradient(circle at 88% 30%,rgba(16,185,129,.08),transparent 26%),linear-gradient(180deg,#f8fbff 0%,#fff 58%,#f8fafc 100%)!important}
+#home:before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(148,163,184,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.08) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 78%);pointer-events:none}
+#home .max-w-7xl{position:relative}
+.maraqs-trust-card{background:rgba(255,255,255,.82);backdrop-filter:blur(10px);border:1px solid rgba(226,232,240,.9);box-shadow:0 12px 32px rgba(15,23,42,.05)}
+.quick-service-strip{border:1px solid #e2e8f0;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);box-shadow:0 20px 50px rgba(15,23,42,.08)}
+.quick-service-chip{transition:.2s;border:1px solid #e2e8f0;background:#fff}
+.quick-service-chip:hover{transform:translateY(-2px);border-color:#93c5fd;box-shadow:0 12px 25px rgba(37,99,235,.12);color:#1d4ed8}
+
+/* Maraqs AI Assistant */
+.maraqs-ai-launcher{position:fixed;right:22px;bottom:22px;z-index:1000;width:62px;height:62px;border-radius:20px;border:0;cursor:pointer;color:#fff;background:linear-gradient(135deg,#2563eb,#1d4ed8 55%,#0f766e);box-shadow:0 18px 45px rgba(37,99,235,.35);display:flex;align-items:center;justify-content:center;transition:.25s}
+.maraqs-ai-launcher:hover{transform:translateY(-3px) scale(1.03)}
+.maraqs-ai-launcher .ai-dot{position:absolute;right:1px;top:1px;width:14px;height:14px;background:#34d399;border:3px solid #fff;border-radius:999px}
+.maraqs-ai-panel{position:fixed;right:22px;bottom:96px;z-index:1001;width:min(390px,calc(100vw - 28px));height:min(610px,calc(100vh - 120px));background:#fff;border:1px solid #dbe4ef;border-radius:24px;box-shadow:0 30px 80px rgba(15,23,42,.25);overflow:hidden;display:none;flex-direction:column}
+.maraqs-ai-panel.open{display:flex;animation:aiIn .22s ease-out}
+@keyframes aiIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+.maraqs-ai-head{padding:16px 18px;background:linear-gradient(135deg,#071426,#123a63);color:#fff;display:flex;align-items:center;justify-content:space-between}
+.maraqs-ai-avatar{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,#60a5fa,#34d399);display:grid;place-items:center;font-weight:900;box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
+.maraqs-ai-messages{flex:1;overflow:auto;padding:16px;background:linear-gradient(180deg,#f8fafc,#fff)}
+.ai-msg{max-width:86%;padding:11px 13px;border-radius:16px;margin-bottom:10px;font-size:13px;line-height:1.55;white-space:pre-wrap}
+.ai-bot{background:#fff;border:1px solid #e2e8f0;color:#334155;border-bottom-left-radius:5px;box-shadow:0 4px 12px rgba(15,23,42,.04)}
+.ai-user{background:#2563eb;color:#fff;margin-left:auto;border-bottom-right-radius:5px}
+.maraqs-ai-suggestions{padding:0 14px 10px;display:flex;gap:7px;overflow:auto;background:#fff}
+.ai-suggest{white-space:nowrap;border:1px solid #dbeafe;background:#eff6ff;color:#1d4ed8;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:700;cursor:pointer}
+.maraqs-ai-form{padding:12px;border-top:1px solid #e2e8f0;display:flex;gap:8px;background:#fff}
+.maraqs-ai-input{flex:1;border:1px solid #cbd5e1;border-radius:14px;padding:11px 12px;font-size:13px;outline:none}
+.maraqs-ai-input:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.maraqs-ai-send{width:44px;border:0;border-radius:14px;background:#2563eb;color:#fff;font-weight:800;cursor:pointer}
+@media(max-width:640px){.maraqs-ai-launcher{right:15px;bottom:15px}.maraqs-ai-panel{right:14px;bottom:88px;border-radius:20px;height:min(590px,calc(100vh - 108px))}}
+</style></head>
+<body class="bg-slate-50 text-slate-800 font-sans"><div class="bg-brand-navy text-slate-300 text-xs py-2.5"><div class="max-w-7xl mx-auto px-4 flex justify-between"><span>Tax • Accounting • Business Registration • Compliance</span><span>+91 9355476488</span></div></div>
 <header class="bg-white border-b border-slate-200 sticky top-0 z-50"><div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between"><a href="index.html" class="flex items-center gap-3"><div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-navy to-brand-600 text-white font-extrabold flex items-center justify-center">MC</div><div><b class="text-xl tracking-tight">MARAQS <span class="text-brand-600">COMMERCE</span></b><small class="block text-[10px] uppercase tracking-wider text-slate-500 font-bold">Tax • Accounting • Registrations</small></div></a><a href="index.html#services-matrix" class="text-sm font-bold text-slate-600 hover:text-brand-600">← All Services</a></div></header>
 <main><section class="bg-gradient-to-b from-blue-50 via-white to-slate-50 py-12 md:py-20"><div class="max-w-7xl mx-auto px-4"><div class="text-xs text-slate-500 mb-6"><a href="index.html" class="hover:text-brand-600">Home</a> / <a href="index.html#services-matrix" class="hover:text-brand-600">Services</a> / <span id="crumb"></span></div><div class="grid lg:grid-cols-12 gap-10 items-start"><div class="lg:col-span-8"><span id="badge" class="inline-block px-3 py-1 rounded-full bg-blue-100 text-brand-700 text-xs font-extrabold">SERVICE</span><h1 id="title" class="text-4xl md:text-6xl font-extrabold text-brand-navy tracking-tight mt-5"></h1><p id="intro" class="text-lg text-slate-600 leading-relaxed mt-5 max-w-3xl"></p><div class="grid sm:grid-cols-3 gap-4 mt-8"><div class="bg-white rounded-2xl border p-5"><p class="text-xs text-slate-500">Turnaround</p><b id="timeline" class="text-lg text-slate-900"></b></div><div class="bg-white rounded-2xl border p-5"><p class="text-xs text-slate-500">Service Mode</p><b class="text-lg text-slate-900">100% Assisted</b></div><div class="bg-white rounded-2xl border p-5"><p class="text-xs text-slate-500">Support</p><b class="text-lg text-slate-900">Dedicated Expert</b></div></div></div><aside class="lg:col-span-4 bg-white rounded-3xl shadow-xl border border-slate-200 p-7 lg:sticky lg:top-28"><h2 class="text-xl font-extrabold">Start this service</h2><p class="text-sm text-slate-500 mt-2">Tell us a few details and our team will contact you.</p><form id="lead" class="mt-6 space-y-3"><input id="name" required placeholder="Full Name" class="w-full border rounded-xl px-4 py-3 text-sm"><input id="phone" required pattern="[0-9]{10}" placeholder="10 digit mobile number" class="w-full border rounded-xl px-4 py-3 text-sm"><input id="email" type="email" placeholder="Email address" class="w-full border rounded-xl px-4 py-3 text-sm"><button class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl py-3.5">Get Started →</button></form><a id="wa" target="_blank" class="block text-center mt-4 text-sm font-bold text-emerald-700">Chat on WhatsApp</a></aside></div></div></section>
 <section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-12 gap-10"><div class="lg:col-span-7"><h2 class="text-3xl font-extrabold text-brand-navy">What’s included</h2><div id="includes" class="grid sm:grid-cols-2 gap-4 mt-7"></div></div><div class="lg:col-span-5"><div class="bg-slate-50 rounded-3xl border p-7"><h2 class="text-2xl font-extrabold">How it works</h2><ol id="steps" class="mt-6 space-y-5"></ol></div></div></div></section>
 <section class="py-16 bg-slate-50"><div class="max-w-4xl mx-auto px-4"><h2 class="text-3xl font-extrabold text-center text-brand-navy">Frequently asked questions</h2><div id="faqs" class="mt-8 space-y-3"></div></div></section></main>
 <footer class="bg-brand-navy text-slate-400 py-10 text-sm"><div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between gap-3"><span>© 2026 Maraqs Commerce. Tax • Accounting • Compliance.</span><span>Ghaziabad & Delhi-NCR • PAN India Digital Services</span></div></footer>
+
+  <!-- Maraqs AI Assistant -->
+  <button id="maraqsAiLauncher" class="maraqs-ai-launcher" aria-label="Open Maraqs AI Assistant" title="Ask Maraqs AI">
+    <span class="ai-dot"></span>
+    <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3 1.5-4.5A7 7 0 0 1 3 13V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg>
+  </button>
+  <section id="maraqsAiPanel" class="maraqs-ai-panel" aria-label="Maraqs AI Assistant">
+    <div class="maraqs-ai-head">
+      <div class="flex items-center gap-3"><div class="maraqs-ai-avatar">AI</div><div><div class="font-extrabold text-sm">Maraqs AI Assistant</div><div class="text-[10px] text-blue-200">Online • Instant service guidance</div></div></div>
+      <button id="maraqsAiClose" class="text-white/80 hover:text-white text-xl leading-none" aria-label="Close">×</button>
+    </div>
+    <div id="maraqsAiMessages" class="maraqs-ai-messages"></div>
+    <div class="maraqs-ai-suggestions">
+      <button class="ai-suggest">GST Registration</button><button class="ai-suggest">ITR Filing</button><button class="ai-suggest">Company Registration</button><button class="ai-suggest">Talk to Expert</button>
+    </div>
+    <form id="maraqsAiForm" class="maraqs-ai-form"><input id="maraqsAiInput" class="maraqs-ai-input" placeholder="Ask about GST, ITR, MCA, company registration..." autocomplete="off"><button class="maraqs-ai-send" aria-label="Send">➤</button></form>
+  </section>
+
 <script>
 const key=new URLSearchParams(location.search).get('service')||'New GST Registration';
 const generic={badge:'Expert Assisted',intro:'Professional end-to-end assistance with document review, application preparation, filing and status support.',timeline:'Fast Track',includes:['Eligibility and requirement review','Document checklist and verification','Application preparation and filing','Status tracking and follow-up','Dedicated expert assistance','Post-service guidance'],steps:['Share your basic requirement and documents','Our expert reviews eligibility and prepares the application','We complete filing and coordinate follow-up','Receive confirmation and next-step guidance'],faqs:[['How do I start?','Submit your details or contact us on WhatsApp. Our team will guide you through the required documents.'],['Will I get document support?','Yes. The service flow includes a clear document checklist and review before filing.'],['How long will it take?','Timelines depend on the service and authority processing. The estimated turnaround is shown above.']]};
@@ -26,6 +82,29 @@ const d=data[key]||{...generic,badge:'Maraqs Service'}; document.title=key+' | M
 includes.innerHTML=d.includes.map(x=>`<div class="flex gap-3 bg-white border rounded-2xl p-4"><span class="text-emerald-600 font-bold">✓</span><span class="text-sm font-semibold">${x}</span></div>`).join('');
 steps.innerHTML=d.steps.map((x,i)=>`<li class="flex gap-4"><span class="w-8 h-8 shrink-0 rounded-full bg-blue-100 text-brand-600 flex items-center justify-center font-extrabold">${i+1}</span><span class="text-sm text-slate-600 pt-1">${x}</span></li>`).join('');
 faqs.innerHTML=d.faqs.map(([q,a])=>`<details class="bg-white border rounded-2xl p-5"><summary class="font-bold cursor-pointer">${q}</summary><p class="text-sm text-slate-600 mt-3 leading-relaxed">${a}</p></details>`).join('');
-const wa='https://wa.me/918595255099?text='+encodeURIComponent('Hi Maraqs Commerce, I need assistance for '+key); document.getElementById('wa').href=wa;
-document.getElementById('lead').addEventListener('submit',e=>{e.preventDefault();const n=name.value,p=phone.value,em=email.value;location.href='https://wa.me/918595255099?text='+encodeURIComponent(`Hi Maraqs Commerce, I want to start ${key}. Name: ${n}, Phone: ${p}, Email: ${em}`)});
+const wa='https://wa.me/919355476488?text='+encodeURIComponent('Hi Maraqs Commerce, I need assistance for '+key); document.getElementById('wa').href=wa;
+document.getElementById('lead').addEventListener('submit',e=>{e.preventDefault();const n=name.value,p=phone.value,em=email.value;location.href='https://wa.me/919355476488?text='+encodeURIComponent(`Hi Maraqs Commerce, I want to start ${key}. Name: ${n}, Phone: ${p}, Email: ${em}`)});
+  // Maraqs AI Assistant (smart website assistant + WhatsApp handoff)
+  (function(){
+    const launcher=document.getElementById('maraqsAiLauncher'), panel=document.getElementById('maraqsAiPanel'), close=document.getElementById('maraqsAiClose'), messages=document.getElementById('maraqsAiMessages'), form=document.getElementById('maraqsAiForm'), input=document.getElementById('maraqsAiInput');
+    if(!launcher||!panel) return;
+    const add=(text,who='bot')=>{const el=document.createElement('div');el.className='ai-msg '+(who==='user'?'ai-user':'ai-bot');el.textContent=text;messages.appendChild(el);messages.scrollTop=messages.scrollHeight;};
+    const open=()=>{panel.classList.add('open'); if(!messages.dataset.started){messages.dataset.started='1';add('Hi! I’m Maraqs AI. 👋\nI can help you find the right service for GST, Income Tax, Company Registration, MCA, Accounting and Compliance. What do you need help with?');} setTimeout(()=>input.focus(),120);};
+    launcher.addEventListener('click',open); close.addEventListener('click',()=>panel.classList.remove('open'));
+    const reply=q=>{const t=q.toLowerCase();
+      if(/expert|human|call|contact|whatsapp|talk/.test(t)) return 'Sure. Our expert desk is available on +91 9355476488. I can also open WhatsApp for you now.';
+      if(/gst.*reg|registration.*gst/.test(t)) return 'For GST Registration, Maraqs can guide you through eligibility, documents, application preparation and filing. Typical processing can take around 3–7 working days depending on verification. Want to start the GST Registration service?';
+      if(/gst|gstr|3b|gstr-1|2b|itc/.test(t)) return 'We can help with GST Registration, GSTR-1, GSTR-3B, ITC/2B reconciliation, amendments, cancellation, LUT and notice replies. Tell me which GST requirement you have.';
+      if(/itr|income tax|tax return|44ad|44ada|salar/.test(t)) return 'We assist with salaried ITR, business/professional ITR, presumptive taxation and corporate tax returns. Share whether you are salaried, a business owner, professional or company.';
+      if(/private|pvt|company|llp|opc|startup|incorporation/.test(t)) return 'For starting a business, we can assist with Private Limited Company, LLP, OPC, proprietorship, partnership and startup registrations. Which business structure are you considering?';
+      if(/mca|director|annual|share|name change|closure/.test(t)) return 'MCA services include annual filing, director changes, company name changes, share transfer and closure support. Tell me the specific company compliance requirement.';
+      if(/account|bookkeep|tds|payroll/.test(t)) return 'We provide accounting & bookkeeping support and TDS return assistance. You can share your business type and approximate monthly transaction volume for the right service flow.';
+      if(/price|fee|cost|charges/.test(t)) return 'Service fees depend on the exact service and document complexity. I can help identify the service first, then you can request a consultation for an exact quote.';
+      return 'I can help you find the right Maraqs Commerce service. Try asking about GST Registration, ITR Filing, Private Limited Company, LLP, MCA compliance, TDS or Accounting. For case-specific advice, our expert can assist you directly.';
+    };
+    const handle=q=>{q=q.trim();if(!q)return;add(q,'user');const r=reply(q);setTimeout(()=>{add(r);if(/expert|human|call|contact|whatsapp|talk/.test(q.toLowerCase())){setTimeout(()=>{window.open('https://wa.me/919355476488?text='+encodeURIComponent('Hi Maraqs Commerce, I need assistance with: '+q),'_blank');},500)}},280)};
+    form.addEventListener('submit',e=>{e.preventDefault();handle(input.value);input.value='';});
+    document.querySelectorAll('.ai-suggest').forEach(b=>b.addEventListener('click',()=>handle(b.textContent)));
+  })();
+
 </script></body></html>
